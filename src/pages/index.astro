@@ -3,128 +3,121 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-
-  <!-- HERO -->
   <section class="flex min-h-screen items-center bg-white">
     <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 lg:grid-cols-12">
-      
-      <div class="lg:col-span-5 text-center lg:text-left">
-        <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold text-primary-700 mb-4">
+      <div class="text-center lg:col-span-5 lg:text-left">
+        <h1 class="mb-4 text-4xl font-extrabold text-primary-700 md:text-5xl xl:text-6xl">
           Accede a una beca y transforma tu futuro
         </h1>
-
-        <p class="text-primary-800 text-lg mb-6">
-          Apoyamos a jóvenes de áreas rurales en Guatemala para acceder a educación y oportunidades reales.
+        <p class="mb-6 text-lg text-primary-800">
+          Apoyamos a jovenes de areas rurales en Guatemala para acceder a educacion y oportunidades reales.
         </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
           <a href="/aplicacion" class="rounded-lg bg-primary-700 px-6 py-3 font-semibold text-white shadow-sm hover:bg-primary-800">
             Aplicar a beca
           </a>
-
           <a href="#como-aplicar" class="rounded-lg border border-primary-300 bg-secondary-soft px-6 py-3 font-semibold text-primary-800 hover:bg-primary-100">
             Ver requisitos
           </a>
         </div>
       </div>
 
-      <div class="lg:col-span-7 flex items-center">
+      <div class="flex items-center lg:col-span-7">
         <img class="w-full rounded-lg border border-secondary/60 shadow-sm" src="/home1.JPG" alt="Estudiantes beneficiados por la fundacion" />
       </div>
-
     </div>
   </section>
 
-  <!-- CÓMO APLICAR -->
   <section id="como-aplicar" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-16">
-
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-4xl font-extrabold text-primary-700 mb-4">
-          Cómo aplicar a la beca
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="mb-4 text-4xl font-extrabold text-primary-700">
+          Como aplicar a la beca
         </h2>
         <p class="text-primary-800">
           Sigue estos pasos para iniciar tu proceso.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-
+      <div class="grid gap-8 text-center md:grid-cols-3">
         <div class="space-y-3">
-          <div class="text-3xl">📝</div>
-          <h3 class="font-bold text-lg">1. Llena el formulario</h3>
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+              <path fill="rgb(255, 255, 255)" d="M448 75.2l0 361.7c0 24.3-19 43.2-43.2 43.2l-361.6 0C19.3 480 0 461.4 0 436.8L0 75.2C0 51.1 18.8 32 43.2 32l361.7 0c24 0 43.1 18.8 43.1 43.2zM410.7 436.8l0-361.6c0-3-2.6-5.8-5.8-5.8l-9.3 0-110.3 74.6-61.3-49.9-61.2 49.9-110.3-74.7-9.3 0c-3.2 0-5.8 2.8-5.8 5.8l0 361.7c0 3 2.6 5.8 5.8 5.8l361.7 0c3.2 .1 5.8-2.7 5.8-5.8zM150.2 186l0 37-73.5 0 0-37 73.5 0zm0 74.4l0 37.3-73.5 0 0-37.3 73.5 0zm11.1-147.3l54-43.7-118.5 0 64.5 43.7zm210 72.9l0 37-196 0 0-37 196 0zm0 74.4l0 37.3-196 0 0-37.3 196 0zM286.7 113.1l64.5-43.7-118.4 0 53.9 43.7zM371.3 335l0 37.3-99.4 0 0-37.3 99.4 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold">1. Llena el formulario</h3>
           <p class="text-primary-800">
-            Completa tu información personal y académica.
+            Completa tu informacion personal y academica.
           </p>
         </div>
 
         <div class="space-y-3">
-          <div class="text-3xl">📄</div>
-          <h3 class="font-bold text-lg">2. Adjunta documentos</h3>
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
+              <path fill="rgb(255, 255, 255)" d="M96 0C60.7 0 32 28.7 32 64l0 384c0 35.3 28.7 64 64 64l180 0c-22.7-31.5-36-70.2-36-112 0-100.6 77.4-183.2 176-191.3l0-38.1c0-17-6.7-33.3-18.7-45.3L290.7 18.7C278.7 6.7 262.5 0 245.5 0L96 0zM357.5 176L264 176c-13.3 0-24-10.7-24-24L240 58.5 357.5 176zM576 400a144 144 0 1 0 -288 0 144 144 0 1 0 288 0zm-86.6-60.9c7.1 5.2 8.7 15.2 3.5 22.3l-64 88c-2.8 3.8-7 6.2-11.7 6.5s-9.3-1.3-12.6-4.6l-40-40c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l26.8 26.8 53-72.9c5.2-7.1 15.2-8.7 22.4-3.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold">2. Adjunta documentos</h3>
           <p class="text-primary-800">
-            Envía los requisitos solicitados.
+            Envia los requisitos solicitados.
           </p>
         </div>
 
         <div class="space-y-3">
-          <div class="text-3xl">🎓</div>
-          <h3 class="font-bold text-lg">3. Proceso de selección</h3>
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
+              <path fill="rgb(255, 255, 255)" d="M48 195.8l209.2 86.1c9.8 4 20.2 6.1 30.8 6.1s21-2.1 30.8-6.1l242.4-99.8c9-3.7 14.8-12.4 14.8-22.1s-5.8-18.4-14.8-22.1L318.8 38.1C309 34.1 298.6 32 288 32s-21 2.1-30.8 6.1L14.8 137.9C5.8 141.6 0 150.3 0 160L0 456c0 13.3 10.7 24 24 24s24-10.7 24-24l0-260.2zm48 71.7L96 384c0 53 86 96 192 96s192-43 192-96l0-116.6-142.9 58.9c-15.6 6.4-32.2 9.7-49.1 9.7s-33.5-3.3-49.1-9.7L96 267.4z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold">3. Proceso de seleccion</h3>
           <p class="text-primary-800">
             Evaluamos tu perfil y te contactamos.
           </p>
         </div>
-
       </div>
 
-      <div class="text-center mt-10">
+      <div class="mt-10 text-center">
         <a href="/aplicacion" class="rounded-lg bg-primary-700 px-8 py-3 font-semibold text-white shadow-sm hover:bg-primary-800">
-          Iniciar aplicación
+          Iniciar aplicacion
         </a>
       </div>
-
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
   <section class="bg-secondary-soft">
-    <div class="max-w-7xl mx-auto px-4 py-16">
-      <h2 class="text-4xl font-extrabold text-center text-primary-700 mb-12">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <h2 class="mb-12 text-center text-4xl font-extrabold text-primary-700">
         Historias que inspiran
       </h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <div class="bg-white p-6 rounded-lg border border-secondary/60 shadow-sm">
-          <p class="text-primary-800 mb-4">
-            “Gracias a la beca pude continuar mis estudios y ahora soy profesional.”
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="rounded-lg border border-secondary/60 bg-white p-6 shadow-sm">
+          <p class="mb-4 text-primary-800">
+            "Gracias a la beca pude continuar mis estudios y ahora soy profesional."
           </p>
-          <h3 class="font-bold text-primary-700">María López</h3>
+          <h3 class="font-bold text-primary-700">Maria Lopez</h3>
         </div>
-
-        <div class="bg-white p-6 rounded-lg border border-secondary/60 shadow-sm">
-          <p class="text-primary-800 mb-4">
-            “El apoyo cambió completamente mi vida y la de mi familia.”
+        <div class="rounded-lg border border-secondary/60 bg-white p-6 shadow-sm">
+          <p class="mb-4 text-primary-800">
+            "El apoyo cambio completamente mi vida y la de mi familia."
           </p>
-          <h3 class="font-bold text-primary-700">Juan Pérez</h3>
+          <h3 class="font-bold text-primary-700">Juan Perez</h3>
         </div>
-
-        <div class="bg-white p-6 rounded-lg border border-secondary/60 shadow-sm">
-          <p class="text-primary-800 mb-4">
-            “Hoy tengo oportunidades que antes parecían imposibles.”
+        <div class="rounded-lg border border-secondary/60 bg-white p-6 shadow-sm">
+          <p class="mb-4 text-primary-800">
+            "Hoy tengo oportunidades que antes parecian imposibles."
           </p>
-          <h3 class="font-bold text-primary-700">Ana García</h3>
+          <h3 class="font-bold text-primary-700">Ana Garcia</h3>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
   <section class="bg-white">
-    <div class="max-w-5xl mx-auto py-16 text-center grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-16 text-center sm:grid-cols-3">
       <div>
         <p class="text-4xl font-extrabold text-primary-700">+1000</p>
-        <p class="text-primary-800">Jóvenes becados</p>
+        <p class="text-primary-800">Jovenes becados</p>
       </div>
       <div>
         <p class="text-4xl font-extrabold text-primary-700">+3</p>
@@ -132,43 +125,38 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div>
         <p class="text-4xl font-extrabold text-primary-700">+20</p>
-        <p class="text-primary-800">Años de impacto</p>
+        <p class="text-primary-800">Anos de impacto</p>
       </div>
     </div>
   </section>
 
-  <!-- QUIÉNES SOMOS (MINI) -->
   <section class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-16 text-center">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-primary-700 mb-4">
-          ¿Quiénes somos?
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-4 text-4xl font-extrabold text-primary-700">
+          Quienes somos
         </h2>
-        <p class="text-primary-800 mb-6">
-          Somos una fundación comprometida con el desarrollo educativo en Guatemala, enfocada en brindar oportunidades a jóvenes con alto potencial.
+        <p class="mb-6 text-primary-800">
+          Somos una fundacion comprometida con el desarrollo educativo en Guatemala, enfocada en brindar oportunidades a jovenes con alto potencial.
         </p>
-
-        <a href="/nosotros" class="text-primary-700 font-medium hover:underline">
-          Conocer más →
+        <a href="/nosotros" class="font-medium text-primary-700 hover:underline">
+          Conocer mas
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
   <section class="bg-primary-700">
-    <div class="max-w-5xl mx-auto text-center px-4 py-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+    <div class="mx-auto max-w-5xl px-4 py-16 text-center">
+      <h2 class="mb-4 text-3xl font-extrabold text-white md:text-4xl">
         Tu futuro puede empezar hoy
       </h2>
-      <p class="text-white mb-6">
+      <p class="mb-6 text-white">
         Aplica a una beca y cambia tu historia.
       </p>
-
       <a href="/aplicacion" class="rounded-lg bg-white px-6 py-3 font-semibold text-primary-700 hover:bg-primary-100">
         Aplicar ahora
       </a>
     </div>
   </section>
-
 </Layout>

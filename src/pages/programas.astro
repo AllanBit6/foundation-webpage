@@ -1,53 +1,158 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TextImage from '../components/TextImage.astro';
 import SectionHero from '../components/SectionHero.astro';
+
+const programas = [
+  {
+    titulo: "Apadrinamiento Educativo",
+    categoria: "Educacion",
+    descripcion:
+      "Apoyamos a jovenes con acceso a educacion superior, acompanamiento academico y desarrollo integral.",
+    imagen:
+      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png",
+    cta: "Conocer mas",
+  },
+  {
+    titulo: "Donativos para insumos medicos",
+    categoria: "Salud",
+    descripcion:
+      "Facilitamos recursos medicos esenciales para comunidades con acceso limitado a servicios de salud.",
+    imagen:
+      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png",
+    cta: "Donar ahora",
+  },
+  {
+    titulo: "Inversion social para emprendedores",
+    categoria: "Desarrollo economico",
+    descripcion:
+      "Impulsamos proyectos productivos que generan ingresos sostenibles en comunidades rurales.",
+    imagen:
+      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png",
+    cta: "Invertir",
+  },
+  {
+    titulo: "Proyectos ambientales",
+    categoria: "Sostenibilidad",
+    descripcion:
+      "Promovemos iniciativas de conservacion y educacion ambiental para proteger nuestro entorno.",
+    imagen:
+      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png",
+    cta: "Participar",
+  },
+];
+
+const enfoque = [
+  "Diagnostico de necesidades",
+  "Acompanamiento cercano",
+  "Alianzas con instituciones",
+  "Medicion de impacto",
+];
 ---
 
 <Layout>
-    <SectionHero title="Programas">
-        Generamos oportunidades reales a través de educación, salud y desarrollo sostenible.
-    </SectionHero>
-  
+  <SectionHero title="Programas">
+    Generamos oportunidades reales a traves de educacion, salud y desarrollo sostenible.
+  </SectionHero>
 
-  <!-- Programa 1 -->
-  <TextImage 
-    title="Apadrinamiento Educativo"
-    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
-    cta={{ link: "#", text: "Conocer más" }}
-  >
-          Apoyamos a jóvenes con acceso a educación superior, acompañamiento académico y desarrollo integral.
-    </TextImage>
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div>
+          <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+            Areas de impacto
+          </span>
+          <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+            Programas disenados para transformar comunidades
+          </h2>
+        </div>
 
+        <p class="text-base leading-7 text-primary-800 sm:text-lg">
+          Cada programa responde a una necesidad concreta y combina recursos, seguimiento y alianzas para lograr cambios sostenibles en la vida de las personas beneficiadas.
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <section class="bg-secondary-soft">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="grid gap-6 md:grid-cols-2">
+        {programas.map((programa) => (
+          <article class="group overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div class="aspect-[16/10] overflow-hidden bg-primary-100">
+              <img
+                class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                src={programa.imagen}
+                alt={programa.titulo}
+                loading="lazy"
+              />
+            </div>
 
-  <!-- Programa 2 (invertido) -->
-  <TextImage 
-    title="Donativos para insumos médicos"
-    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
-    cta={{ link: "#", text: "Donar ahora" }}
-    reverse={true}
-  >
-          Facilitamos recursos médicos esenciales para comunidades con acceso limitado a servicios de salud.
-    </TextImage>
+            <div class="flex min-h-64 flex-col p-6">
+              <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+                {programa.categoria}
+              </span>
+              <h3 class="mt-2 font-heading text-2xl font-extrabold text-primary-700">
+                {programa.titulo}
+              </h3>
+              <p class="mt-4 flex-1 leading-7 text-primary-800">
+                {programa.descripcion}
+              </p>
+              <a
+                href="#"
+                class="mt-6 inline-flex w-fit rounded-lg bg-primary-700 px-5 py-2.5 font-semibold text-white transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-200"
+              >
+                {programa.cta}
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <!-- Programa 3 -->
-  <TextImage 
-    title="Inversión social para emprendedores"
-    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
-    cta={{ link: "#", text: "Invertir" }}
-  >
-          Impulsamos proyectos productivos que generan ingresos sostenibles en comunidades rurales.
-    </TextImage>
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8 lg:py-16">
+      <div>
+        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+          Como trabajamos
+        </span>
+        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+          Un proceso claro para generar impacto
+        </h2>
+        <p class="mt-4 leading-7 text-primary-800">
+          Nuestro equipo acompana cada iniciativa desde la identificacion de necesidades hasta el seguimiento de resultados.
+        </p>
+      </div>
 
-  <!-- Programa 4 (invertido) -->
-  <TextImage 
-    title="Proyectos ambientales"
-    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
-    cta={{ link: "#", text: "Participar" }}
-    reverse={true}
-  >
-          Promovemos iniciativas de conservación y educación ambiental para proteger nuestro entorno.
-    </TextImage>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {enfoque.map((item, index) => (
+          <div class="rounded-lg border border-secondary/60 bg-secondary-soft p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-700 text-sm font-extrabold text-white">
+              {index + 1}
+            </div>
+            <h3 class="font-heading text-lg font-bold text-primary-700">
+              {item}
+            </h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
+  <section class="bg-primary-700">
+    <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl font-extrabold text-white">
+        Construyamos mas oportunidades
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-primary-50">
+        Tu apoyo puede fortalecer nuestros programas y ampliar su alcance en comunidades de Guatemala.
+      </p>
+      <a
+        href="#"
+        class="mt-6 inline-flex rounded-lg bg-white px-6 py-3 font-semibold text-primary-700 transition hover:bg-primary-50 focus:outline-none focus:ring-4 focus:ring-primary-300"
+      >
+        Sumate al programa
+      </a>
+    </div>
+  </section>
 </Layout>
