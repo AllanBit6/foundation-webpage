@@ -1,7 +1,104 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import SectionHero from "../components/SectionHero.astro";
+
+const carreras = [
+  {
+    nombre: "Administracion de Empresas",
+    descripcion:
+      "Formacion para liderar equipos, gestionar recursos y crear soluciones sostenibles en organizaciones.",
+    video: "",
+  },
+  {
+    nombre: "Contaduria Publica y Auditoria",
+    descripcion:
+      "Preparacion en finanzas, control interno y analisis contable para apoyar decisiones empresariales.",
+    video: "",
+  },
+  {
+    nombre: "Ingenieria en Sistemas",
+    descripcion:
+      "Desarrollo de habilidades en programacion, tecnologia y resolucion de problemas digitales.",
+    video: "",
+  },
+  {
+    nombre: "Enfermeria",
+    descripcion:
+      "Vocacion de servicio y conocimientos clinicos para brindar atencion humana y profesional.",
+    video: "",
+  },
+  {
+    nombre: "Psicologia",
+    descripcion:
+      "Comprension del comportamiento humano para acompanar procesos de bienestar personal y social.",
+    video: "",
+  },
+  {
+    nombre: "Educacion",
+    descripcion:
+      "Herramientas pedagogicas para formar nuevas generaciones con compromiso, creatividad y liderazgo.",
+    video: "",
+  },
+];
 ---
 
 <Layout>
-    
+  <SectionHero title="Carreras">
+    Acompanamos a jovenes en su camino hacia una profesion con futuro, impacto y oportunidades reales.
+  </SectionHero>
+
+  <section class="bg-secondary-soft">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="mx-auto mb-10 max-w-3xl text-center">
+        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+          Oferta educativa
+        </span>
+        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+          Carreras que impulsan el desarrollo
+        </h2>
+        <p class="mt-4 text-base leading-7 text-primary-800 sm:text-lg">
+          Estas son algunas de las areas profesionales que apoyamos para que cada estudiante pueda construir una trayectoria con proposito.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {carreras.map((carrera) => (
+          <article class="group overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div class="aspect-[4/3] overflow-hidden bg-primary-100">
+              {carrera.video ? (
+                <video
+                  class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  src={carrera.video}
+                  controls
+                  preload="metadata"
+                  aria-label={`Video de ${carrera.nombre}`}
+                ></video>
+              ) : (
+                <div class="flex h-full w-full items-center justify-center px-6 text-center">
+                  <span class="rounded-lg border border-primary-200 bg-white/80 px-4 py-3 text-sm font-semibold text-primary-700">
+                    Agrega aqui el video de {carrera.nombre}
+                  </span>
+                </div>
+              )}
+            </div>
+
+            <div class="flex min-h-52 flex-col p-6">
+              <h3 class="font-heading text-xl font-bold text-primary-700">
+                {carrera.nombre}
+              </h3>
+              <p class="mt-3 flex-1 text-sm leading-6 text-primary-800 sm:text-base">
+                {carrera.descripcion}
+              </p>
+              <a
+                href="/aplicacion"
+                class="mt-5 inline-flex w-fit items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-200"
+              >
+                Aplicar ahora
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>

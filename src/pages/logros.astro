@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHero from '../components/SectionHero.astro';
+
+const logros = [
+  {
+    titulo: "Graduacion de becados",
+    fecha: "2026",
+    descripcion:
+      "Estudiantes culminaron una etapa academica importante gracias al acompanamiento educativo y familiar.",
+    imagen: "",
+  },
+  {
+    titulo: "Entrega de becas",
+    fecha: "2025",
+    descripcion:
+      "Nuevos jovenes se integraron al programa para continuar sus estudios con mejores oportunidades.",
+    imagen: "",
+  },
+  {
+    titulo: "Talleres de liderazgo",
+    fecha: "2025",
+    descripcion:
+      "Se fortalecieron habilidades personales, comunicacion y trabajo en equipo en estudiantes beneficiados.",
+    imagen: "",
+  },
+  {
+    titulo: "Acompanamiento academico",
+    fecha: "2024",
+    descripcion:
+      "Mentores y coordinadores brindaron seguimiento cercano para impulsar la permanencia estudiantil.",
+    imagen: "",
+  },
+  {
+    titulo: "Alianzas institucionales",
+    fecha: "2024",
+    descripcion:
+      "Se crearon alianzas para ampliar el impacto de los programas educativos en comunidades.",
+    imagen: "",
+  },
+  {
+    titulo: "Historias de superacion",
+    fecha: "2023",
+    descripcion:
+      "Jovenes compartieron sus avances, metas y aprendizajes despues de recibir apoyo integral.",
+    imagen: "",
+  },
+];
+
+const videos = [
+  {
+    titulo: "Testimonio de estudiante",
+    youtubeId: "",
+  },
+  {
+    titulo: "Resumen de actividades",
+    youtubeId: "",
+  },
+  {
+    titulo: "Impacto del programa",
+    youtubeId: "",
+  },
+];
+---
+
+<Layout>
+  <SectionHero title="Logros" image="/achieves.JPG">
+    A lo largo de nuestra trayectoria, hemos alcanzado hitos significativos que reflejan nuestro compromiso con la educacion integral y el impacto positivo en la vida de los jovenes guatemaltecos.
+  </SectionHero>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="mx-auto mb-10 max-w-3xl text-center">
+        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+          Galeria de logros
+        </span>
+        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+          Momentos que cuentan nuestra historia
+        </h2>
+        <p class="mt-4 text-base leading-7 text-primary-800 sm:text-lg">
+          Agrega imagenes, fechas y descripciones para documentar los avances mas importantes de la fundacion.
+        </p>
+      </div>
+
+      <div class="grid auto-rows-[minmax(280px,auto)] grid-cols-1 gap-6 md:grid-cols-4">
+        {logros.map((logro, index) => (
+          <article class={`group overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${index === 0 || index === 3 ? 'md:col-span-2 md:row-span-2' : 'md:col-span-2 lg:col-span-1'}`}>
+            <div class={`${index === 0 || index === 3 ? 'aspect-[4/3] md:aspect-auto md:h-80' : 'aspect-[4/3]'} overflow-hidden bg-primary-100`}>
+              {logro.imagen ? (
+                <img
+                  class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  src={logro.imagen}
+                  alt={logro.titulo}
+                  loading="lazy"
+                />
+              ) : (
+                <div class="flex h-full w-full items-center justify-center px-6 text-center">
+                  <span class="rounded-lg border border-primary-200 bg-white/80 px-4 py-3 text-sm font-semibold text-primary-700">
+                    Agrega aqui la imagen
+                  </span>
+                </div>
+              )}
+            </div>
+
+            <div class="p-6">
+              <time class="text-sm font-bold uppercase tracking-wide text-primary-600">
+                {logro.fecha}
+              </time>
+              <h3 class="mt-2 font-heading text-xl font-bold text-primary-700">
+                {logro.titulo}
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-primary-800 sm:text-base">
+                {logro.descripcion}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-secondary-soft">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="mx-auto mb-10 max-w-3xl text-center">
+        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+          Videos
+        </span>
+        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+          Logros en formato vertical
+        </h2>
+        <p class="mt-4 text-base leading-7 text-primary-800 sm:text-lg">
+          Coloca el ID del video de YouTube en cada apartado para mostrar testimonios, resumenes o historias de impacto.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {videos.map((video) => (
+          <article class="overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm">
+            <div class="aspect-[9/16] bg-primary-100">
+              {video.youtubeId ? (
+                <iframe
+                  class="h-full w-full"
+                  src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                  title={video.titulo}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              ) : (
+                <div class="flex h-full w-full items-center justify-center px-6 text-center">
+                  <span class="rounded-lg border border-primary-200 bg-white/80 px-4 py-3 text-sm font-semibold text-primary-700">
+                    Agrega aqui el ID de YouTube
+                  </span>
+                </div>
+              )}
+            </div>
+
+            <div class="p-5 text-center">
+              <h3 class="font-heading text-lg font-bold text-primary-700">
+                {video.titulo}
+              </h3>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
