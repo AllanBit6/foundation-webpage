@@ -1,0 +1,36 @@
+---
+const { title, image, cta, reverse = false } = Astro.props;
+---
+
+<section class="bg-white">
+  <div class={`mx-auto flex max-w-7xl flex-col items-center gap-10 px-4 py-14 md:flex-row ${reverse ? 'md:flex-row-reverse' : ''}`}>
+
+    <!-- Imagen -->
+    <img 
+      src={image}
+      class="w-full rounded-lg border border-secondary/60 shadow-sm md:w-1/2"
+      alt={title}
+    />
+
+    <!-- Texto -->
+    <div class="md:w-1/2">
+      <h2 class="mb-4 font-heading text-3xl font-extrabold text-primary-700">
+        {title}
+      </h2>
+
+      <div class="mb-6 text-primary-800">
+        <slot />
+      </div>
+
+      {cta && (
+        <a 
+          href={cta.link} 
+          class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-primary-800"
+        >
+          {cta.text}
+        </a>
+      )}
+    </div>
+
+  </div>
+</section>

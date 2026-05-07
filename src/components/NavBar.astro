@@ -1,94 +1,77 @@
-<header class="fixed w-full z-50 top-0 left-0">
-  <nav class="bg-white border-gray-200 px-5 lg:px-6 py-5">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
-      <!-- Logo -->
-      <a href="#" class="flex items-center">
-        <img src="/logo.jpg" class="mr-3 h-3 sm:h-9" alt="Logo" />
-        <span
-          class="self-center text-xl font-semibold whitespace-nowrap text-gray-900"
-        >
-        </span>
+<header class="fixed top-0 left-0 z-50 w-full">
+  <nav class="bg-white/95 border-b border-secondary/60 px-5 py-4 shadow-sm backdrop-blur lg:px-6">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between">
+      <a href="/" class="flex items-center">
+        <img src="/logo.jpg" class="mr-3 h-8 sm:h-10 lg:h-14" alt="Logo Fundacion Transformando Vidas" />
       </a>
 
-      <!-- Right buttons -->
       <div class="flex items-center lg:order-2">
-        <a
-          href="#"
-          class="bg-red-500 text-white hover:bg-red-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 mr-2"
-        >
-          ¡Aplicar a una beca!
-        </a>
-        <a
-          href="#"
-          class="bg-blue-500 text-white hover:bg-blue-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 mr-2"
-        >
-          Quiero Apoyar
-        </a>
+        <div class="hidden lg:flex">
+          <a href="/aplicacion" class="mr-2 rounded-lg bg-primary-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-800">
+            Aplicar a una beca
+          </a>
+          <a href="#" class="rounded-lg border border-primary-300 bg-secondary-soft px-4 py-2 text-sm font-semibold text-primary-800 hover:bg-primary-100">
+            Quiero apoyar
+          </a>
+        </div>
 
-        <!-- Mobile button -->
         <button
-          type="button"
-          class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:ring-2 focus:ring-gray-200"
+          id="menu-btn"
+          class="ml-1 inline-flex items-center rounded-lg p-2 text-primary-700 hover:bg-primary-50 lg:hidden"
+          aria-label="Abrir menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            class="w-6 h-6"
-            fill="#9CA3AF"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fill="#6B7280"
-              d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-            ></path></svg
-          >
+          <span class="text-2xl leading-none">&#9776;</span>
         </button>
       </div>
 
-      <!-- Menu -->
-      <div class="hidden w-full lg:flex lg:w-auto lg:order-1">
-        <ul
-          class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
-        >
-          <li>
-            <a href="/" class="block py-2 text-primary-700 lg:p-0">
-              Conoce a FTV
-            </a>
-          </li>
-          <li>
-            <a
-              href="/nosotros"
-              class="block py-2 text-gray-700 hover:text-primary-700 lg:p-0"
-            >
-              Nosotros
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 text-gray-700 hover:text-primary-700 lg:p-0"
-            >
-              Programas
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 text-gray-700 hover:text-primary-700 lg:p-0"
-            >
-              Logros
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 text-gray-700 hover:text-primary-700 lg:p-0"
-            >
-              Involucrate
-            </a>
-          </li>
+      <div class="hidden w-full lg:order-1 lg:flex lg:w-auto">
+        <ul class="mt-4 flex flex-col font-semibold lg:mt-0 lg:flex-row lg:space-x-8">
+          <li><a href="/" class="block py-2 text-primary-700 hover:text-primary-900">Inicio</a></li>
+          <li><a href="/aplicacion" class="block py-2 text-primary-700 hover:text-primary-900">Proceso</a></li>
+          <li><a href="/carreras" class="block py-2 text-primary-700 hover:text-primary-900">Carreras</a></li>
+          <li><a href="/nosotros" class="block py-2 text-primary-700 hover:text-primary-900">Nosotros</a></li>
+          <li><a href="/programas" class="block py-2 text-primary-700 hover:text-primary-900">Programas</a></li>
+          <li><a href="#" class="block py-2 text-primary-700 hover:text-primary-900">Logros</a></li>
+          <li><a href="#" class="block py-2 text-primary-700 hover:text-primary-900">Involucrate</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-secondary/60 bg-white shadow-sm lg:hidden"
+  >
+    <ul class="flex flex-col space-y-3 px-4 py-4 font-semibold text-primary-800">
+      <li><a href="/" class="block hover:text-primary-950">Inicio</a></li>
+      <li><a href="/aplicacion" class="block hover:text-primary-950">Proceso de aplicacion</a></li>
+      <li><a href="/nosotros" class="block hover:text-primary-950">Nosotros</a></li>
+      <li><a href="/programas" class="block hover:text-primary-950">Programas</a></li>
+      <li><a href="#" class="block hover:text-primary-950">Logros</a></li>
+      <li><a href="#" class="block hover:text-primary-950">Involucrate</a></li>
+
+      <li class="border-t border-secondary/60 pt-4">
+        <a href="/aplicacion" class="mb-2 block rounded-lg bg-primary-700 py-2 text-center text-white hover:bg-primary-800">
+          Aplicar a beca
+        </a>
+        <a href="#" class="block rounded-lg border border-primary-300 bg-secondary-soft py-2 text-center text-primary-800 hover:bg-primary-100">
+          Apoyar
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+  }
+</script>

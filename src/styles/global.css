@@ -1,2 +1,43 @@
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
+
+@theme {
+  --color-primary-50: #f4f4fb;
+  --color-primary-100: #e7e8f5;
+  --color-primary-200: #d8d9ee;
+  --color-primary-300: #c5c6e1;
+  --color-primary-400: #9e9fd0;
+  --color-primary-500: #7979b7;
+  --color-primary-600: #62629e;
+  --color-primary-700: #51518e;
+  --color-primary-800: #424273;
+  --color-primary-900: #34345c;
+  --color-primary-950: #20203a;
+
+  --color-secondary: #c5c6e1;
+  --color-secondary-soft: #f3f3fa;
+
+  --font-sans: "Inter", "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Source Sans 3", "Source Sans Pro", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color: #20203a;
+  background: #ffffff;
+  font-family: "Inter", "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #20203a;
+  font-family: "Inter", "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: "Source Sans 3", "Source Sans Pro", "Inter", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}

@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TextImage from '../components/TextImage.astro';
+import SectionHero from '../components/SectionHero.astro';
+---
+
+<Layout>
+    <SectionHero title="Programas">
+        Generamos oportunidades reales a través de educación, salud y desarrollo sostenible.
+    </SectionHero>
+  
+
+  <!-- Programa 1 -->
+  <TextImage 
+    title="Apadrinamiento Educativo"
+    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+    cta={{ link: "#", text: "Conocer más" }}
+  >
+          Apoyamos a jóvenes con acceso a educación superior, acompañamiento académico y desarrollo integral.
+    </TextImage>
+
+
+
+  <!-- Programa 2 (invertido) -->
+  <TextImage 
+    title="Donativos para insumos médicos"
+    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+    cta={{ link: "#", text: "Donar ahora" }}
+    reverse={true}
+  >
+          Facilitamos recursos médicos esenciales para comunidades con acceso limitado a servicios de salud.
+    </TextImage>
+
+  <!-- Programa 3 -->
+  <TextImage 
+    title="Inversión social para emprendedores"
+    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+    cta={{ link: "#", text: "Invertir" }}
+  >
+          Impulsamos proyectos productivos que generan ingresos sostenibles en comunidades rurales.
+    </TextImage>
+
+  <!-- Programa 4 (invertido) -->
+  <TextImage 
+    title="Proyectos ambientales"
+    image="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+    cta={{ link: "#", text: "Participar" }}
+    reverse={true}
+  >
+          Promovemos iniciativas de conservación y educación ambiental para proteger nuestro entorno.
+    </TextImage>
+
+</Layout>

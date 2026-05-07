@@ -4,23 +4,27 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",
-          600: "#2563eb",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
-          950: "#172554"
-        }
+          50: "#f4f4fb",
+          100: "#e7e8f5",
+          200: "#d8d9ee",
+          300: "#c5c6e1",
+          400: "#9e9fd0",
+          500: "#7979b7",
+          600: "#62629e",
+          700: "#51518E",
+          800: "#424273",
+          900: "#34345c",
+          950: "#20203a"
+        },
+        secondary: "#c5c6e1",
+        "secondary-soft": "#f3f3fa"
       },
 
       fontFamily: {
         sans: [
           'Inter',
+          'Source Sans 3',
+          'Source Sans Pro',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',
@@ -32,7 +36,9 @@ export default {
           'sans-serif'
         ],
         heading: [
-          'Oswald',
+          'Source Sans 3',
+          'Source Sans Pro',
+          'Inter',
           'sans-serif'
         ]
       }
