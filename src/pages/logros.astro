@@ -85,7 +85,7 @@ const videos = [
       <div class="grid auto-rows-[minmax(280px,auto)] grid-cols-1 gap-6 md:grid-cols-4">
         {logros.map((logro, index) => (
           <article class={`group overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${index === 0 || index === 3 ? 'md:col-span-2 md:row-span-2' : 'md:col-span-2 lg:col-span-1'}`}>
-            <div class={`${index === 0 || index === 3 ? 'aspect-[4/3] md:aspect-auto md:h-80' : 'aspect-[4/3]'} overflow-hidden bg-primary-100`}>
+            <div class={`${index === 0 || index === 3 ? 'aspect-4/3 md:aspect-auto md:h-80' : 'aspect-4/3'} overflow-hidden bg-primary-100`}>
               {logro.imagen ? (
                 <img
                   class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
@@ -136,7 +136,7 @@ const videos = [
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {videos.map((video) => (
           <article class="overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm">
-            <div class="aspect-[9/16] bg-primary-100">
+            <div class="aspect-9/16 bg-primary-100">
               {video.youtubeId ? (
                 <iframe
                   class="h-full w-full"
