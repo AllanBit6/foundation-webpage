@@ -14,7 +14,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para continuar estudios en auditoria, administracion, economia, derecho, negocios o comercio internacional.",
     ],
-    video: "",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778217398/accounting_gnrtvh.mp4",
   },
   {
     nombre: "Perito en Electronica con especialidad en desarrollo de software y mantenimiento de equipos digitales.",
@@ -27,7 +27,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para estudiar sistemas, electronica, telecomunicaciones, robotica, inteligencia artificial o seguridad informatica.",
     ],
-    video: "",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129440/Electronicas_oya8b2.mp4",
   },
   {
     nombre: "Bachillerato en Ciencias Biologicas con enfasis en medicina alternativa y enfermeria.",
@@ -40,7 +40,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para continuar en medicina, enfermeria, nutricion, odontologia, psicologia, biologia o carreras afines a la salud.",
     ],
-    video: "",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129573/Medicina-Enfermeria_a0e9pa.mp4",
   },
   {
     nombre: "Perito en mecanica automotriz, con especializacion en administracion de talleres.",
@@ -53,7 +53,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para estudiar mecanica automotriz, mecanica industrial, ingenieria, tecnologia o areas productivas relacionadas.",
     ],
-    video: "",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129451/Mecanica_sn0yjk.mp4",
   },
   {
     nombre: "Bachillerato Bilingue en Ciencias y Humanidades",
@@ -66,7 +66,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para continuar estudios en salud, humanidades, tecnologia, ingenieria, ciencias sociales o carreras afines.",
     ],
-    video: "",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129575/Ciencias_Exactas_2_uaqtlk.webm",
   },
   {
     nombre: "Basico Bilingue con enfasis en emprendimiento y liderazgo comunitario.",
@@ -79,7 +79,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Prepara al estudiante para elegir carreras tecnicas, bilingues, cientificas, tecnologicas o de emprendimiento.",
     ],
-    video: "",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129572/Educaci%C3%B3n_Integral_xmyoqq.mp4",
   },
 ];
 ---
@@ -111,8 +111,9 @@ const carreras = [
                 <video
                   class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                   src={carrera.video}
-                  controls
+                  autoplay
                   preload="metadata"
+                  loop
                   aria-label={`Video de ${carrera.nombre}`}
                 ></video>
               ) : (
