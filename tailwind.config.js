@@ -1,5 +1,6 @@
-export default {
-  darkMode: 'class', // (puedes quitarlo si no usarás dark mode)
+module.exports = {
+  darkMode: "class",
+
   theme: {
     extend: {
       colors: {
@@ -14,34 +15,39 @@ export default {
           700: "#51518E",
           800: "#424273",
           900: "#34345c",
-          950: "#20203a"
+          950: "#20203a",
         },
         secondary: "#c5c6e1",
-        "secondary-soft": "#f3f3fa"
+        "secondary-soft": "#f3f3fa",
       },
-
+      keyframes:{
+        
+      }
+      ,
       fontFamily: {
         sans: [
-          'Inter',
-          'Source Sans 3',
-          'Source Sans Pro',
-          'ui-sans-serif',
-          'system-ui',
-          '-apple-system',
-          'Segoe UI',
-          'Roboto',
-          'Helvetica Neue',
-          'Arial',
-          'Noto Sans',
-          'sans-serif'
+          "Inter",
+          "Source Sans 3",
+          "Source Sans Pro",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
         ],
         heading: [
-          'Source Sans 3',
-          'Source Sans Pro',
-          'Inter',
-          'sans-serif'
-        ]
-      }
-    }
-  }
+          "Source Sans 3",
+          "Source Sans Pro",
+          "Inter",
+          "sans-serif",
+        ],
+      },
+    },
+  },
+
+  plugins: [require("tailwindcss-animate")],
 }
