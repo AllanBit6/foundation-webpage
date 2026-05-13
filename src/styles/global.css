@@ -20,6 +20,20 @@
   --color-secondary: #c5c6e1;
   --color-secondary-soft: #f3f3fa;
 
+  --color-accent-50:  #fff8e8;
+  --color-accent-100: #fef0c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+
+  --color-success-50:  #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+
   --font-sans: "Inter", "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Source Sans 3", "Source Sans Pro", "Inter", ui-sans-serif, system-ui, sans-serif;
 }

@@ -1,33 +1,105 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import GuatemalaMap from '../components/GuatemalaMap.astro';
+import Layout from "../layouts/Layout.astro";
+import GuatemalaMap from "../components/GuatemalaMap.astro";
 ---
 
 <Layout>
-  <section class="animate-fadeInLeft delay-1000 flex min-h-screen items-center bg-white">
-    <div class="mx-auto grid h-full w-full max-w-7xl gap-8 px-4 lg:grid-cols-12">
-      <div class="flex items-center justify-center flex-col text-center lg:col-span-6 lg:text-left">
-        <h1 class="mb-4 text-4xl font-extrabold text-primary-700 md:text-5xl xl:text-6xl">
-          Accede a una beca y transforma tu futuro
-        </h1>
-        <p class="mb-6 text-lg text-primary-800">
-          Apoyamos a jóvenes de areas rurales en Guatemala para acceder a educación y oportunidades reales.
-        </p>
-        <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-          <a href="/aplicacion" class="rounded-lg bg-primary-700 px-6 py-3 font-semibold text-white shadow-sm hover:bg-primary-800">
-            Aplicar a beca
-          </a>
-          <a href="#como-aplicar" class="rounded-lg border border-primary-300 bg-secondary-soft px-6 py-3 font-semibold text-primary-800 hover:bg-primary-100">
-            Ver requisitos
-          </a>
-        </div>
+  <section class="relative min-h-screen overflow-hidden bg-primary-900">
+
+  <!-- Imagen de fondo -->
+  <img
+    src="/home1.JPG"
+    alt="Estudiantes beneficiados por la fundación"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-linear-to-r from-primary-950/85 via-primary-900/60 to-primary-900/20"></div>
+
+  <!-- Contenido -->
+  <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20">
+
+    <div class="max-w-2xl animate fade-up">
+
+      <!-- Badge -->
+      <span
+        class="mb-5 inline-block rounded-full bg-white/10 px-4 py-2 text-sm font-semibold tracking-wide text-white backdrop-blur-md"
+      >
+        Becas para jóvenes rurales en Guatemala
+      </span>
+
+      <!-- Título -->
+      <h1
+        class="mb-6 text-5xl font-extrabold leading-tight text-white md:text-6xl xl:text-7xl"
+      >
+        Accede a una beca y
+        <span class="text-secondary">
+          transforma tu futuro
+        </span>
+      </h1>
+
+      <!-- Texto -->
+      <p
+        class="mb-8 max-w-xl text-lg leading-relaxed text-white/90 md:text-xl"
+      >
+        Apoyamos a jóvenes con talento y compromiso para que puedan acceder
+        a educación, oportunidades reales y construir una mejor historia.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex flex-col gap-4 sm:flex-row">
+
+        <a
+          href="/aplicacion"
+          class="rounded-lg bg-white px-7 py-3 font-semibold text-primary-800 shadow-lg transition hover:scale-105 hover:bg-primary-50"
+        >
+          Aplicar a beca
+        </a>
+
+        <a
+          href="#como-aplicar"
+          class="rounded-lg border border-white/30 bg-white/10 px-7 py-3 font-semibold text-white backdrop-blur-md transition hover:bg-white/20"
+        >
+          Ver requisitos
+        </a>
+
       </div>
 
-      <div class="flex items-center justify-center lg:col-span-6">
-        <img class="w-full h-screen max-h-150 object-cover border-2 border-primary-200 shadow-2xl hover:shadow-3xl transition-shadow duration-300" src="/home1.JPG" alt="Estudiantes beneficiados por la fundacion" />
+      <!-- Stats -->
+      <div class="mt-12 grid grid-cols-3 gap-8 border-t border-white/20 pt-8">
+
+        <div>
+          <p class="text-3xl font-extrabold text-white">
+            +<span class="stat" data-target="2000">0</span>
+          </p>
+          <p class="text-sm text-white/70">
+            Jóvenes becados
+          </p>
+        </div>
+
+        <div>
+          <p class="text-3xl font-extrabold text-white">
+            +<span class="stat" data-target="5">0</span>
+          </p>
+          <p class="text-sm text-white/70">
+            Departamentos
+          </p>
+        </div>
+
+        <div>
+          <p class="text-3xl font-extrabold text-white">
+            +<span class="stat" data-target="20">0</span>
+          </p>
+          <p class="text-sm text-white/70">
+            Años de impacto
+          </p>
+        </div>
+
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="como-aplicar" class="animate fade-up delay-1000 bg-white">
     <div class="mx-auto max-w-7xl px-4 py-16">
@@ -40,11 +112,23 @@ import GuatemalaMap from '../components/GuatemalaMap.astro';
         </p>
       </div>
 
-      <div class="animate fade-up delay-1000 grid gap-8 text-center md:grid-cols-3">
+      <div
+        class="animate fade-up delay-1000 grid gap-8 text-center md:grid-cols-3"
+      >
         <div class="space-y-3">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700">
-            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-              <path fill="rgb(255, 255, 255)" d="M448 75.2l0 361.7c0 24.3-19 43.2-43.2 43.2l-361.6 0C19.3 480 0 461.4 0 436.8L0 75.2C0 51.1 18.8 32 43.2 32l361.7 0c24 0 43.1 18.8 43.1 43.2zM410.7 436.8l0-361.6c0-3-2.6-5.8-5.8-5.8l-9.3 0-110.3 74.6-61.3-49.9-61.2 49.9-110.3-74.7-9.3 0c-3.2 0-5.8 2.8-5.8 5.8l0 361.7c0 3 2.6 5.8 5.8 5.8l361.7 0c3.2 .1 5.8-2.7 5.8-5.8zM150.2 186l0 37-73.5 0 0-37 73.5 0zm0 74.4l0 37.3-73.5 0 0-37.3 73.5 0zm11.1-147.3l54-43.7-118.5 0 64.5 43.7zm210 72.9l0 37-196 0 0-37 196 0zm0 74.4l0 37.3-196 0 0-37.3 196 0zM286.7 113.1l64.5-43.7-118.4 0 53.9 43.7zM371.3 335l0 37.3-99.4 0 0-37.3 99.4 0z"/>
+          <div
+            class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700"
+          >
+            <svg
+              class="h-8 w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              aria-hidden="true"
+            >
+              <path
+                fill="rgb(255, 255, 255)"
+                d="M448 75.2l0 361.7c0 24.3-19 43.2-43.2 43.2l-361.6 0C19.3 480 0 461.4 0 436.8L0 75.2C0 51.1 18.8 32 43.2 32l361.7 0c24 0 43.1 18.8 43.1 43.2zM410.7 436.8l0-361.6c0-3-2.6-5.8-5.8-5.8l-9.3 0-110.3 74.6-61.3-49.9-61.2 49.9-110.3-74.7-9.3 0c-3.2 0-5.8 2.8-5.8 5.8l0 361.7c0 3 2.6 5.8 5.8 5.8l361.7 0c3.2 .1 5.8-2.7 5.8-5.8zM150.2 186l0 37-73.5 0 0-37 73.5 0zm0 74.4l0 37.3-73.5 0 0-37.3 73.5 0zm11.1-147.3l54-43.7-118.5 0 64.5 43.7zm210 72.9l0 37-196 0 0-37 196 0zm0 74.4l0 37.3-196 0 0-37.3 196 0zM286.7 113.1l64.5-43.7-118.4 0 53.9 43.7zM371.3 335l0 37.3-99.4 0 0-37.3 99.4 0z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold">1. Llena el formulario</h3>
@@ -54,32 +138,51 @@ import GuatemalaMap from '../components/GuatemalaMap.astro';
         </div>
 
         <div class="space-y-3">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700">
-            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
-              <path fill="rgb(255, 255, 255)" d="M96 0C60.7 0 32 28.7 32 64l0 384c0 35.3 28.7 64 64 64l180 0c-22.7-31.5-36-70.2-36-112 0-100.6 77.4-183.2 176-191.3l0-38.1c0-17-6.7-33.3-18.7-45.3L290.7 18.7C278.7 6.7 262.5 0 245.5 0L96 0zM357.5 176L264 176c-13.3 0-24-10.7-24-24L240 58.5 357.5 176zM576 400a144 144 0 1 0 -288 0 144 144 0 1 0 288 0zm-86.6-60.9c7.1 5.2 8.7 15.2 3.5 22.3l-64 88c-2.8 3.8-7 6.2-11.7 6.5s-9.3-1.3-12.6-4.6l-40-40c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l26.8 26.8 53-72.9c5.2-7.1 15.2-8.7 22.4-3.5z"/>
+          <div
+            class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700"
+          >
+            <svg
+              class="h-8 w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              aria-hidden="true"
+            >
+              <path
+                fill="rgb(255, 255, 255)"
+                d="M96 0C60.7 0 32 28.7 32 64l0 384c0 35.3 28.7 64 64 64l180 0c-22.7-31.5-36-70.2-36-112 0-100.6 77.4-183.2 176-191.3l0-38.1c0-17-6.7-33.3-18.7-45.3L290.7 18.7C278.7 6.7 262.5 0 245.5 0L96 0zM357.5 176L264 176c-13.3 0-24-10.7-24-24L240 58.5 357.5 176zM576 400a144 144 0 1 0 -288 0 144 144 0 1 0 288 0zm-86.6-60.9c7.1 5.2 8.7 15.2 3.5 22.3l-64 88c-2.8 3.8-7 6.2-11.7 6.5s-9.3-1.3-12.6-4.6l-40-40c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l26.8 26.8 53-72.9c5.2-7.1 15.2-8.7 22.4-3.5z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold">2. Adjunta documentos</h3>
-          <p class="text-primary-800">
-            Envía los requisitos solicitados.
-          </p>
+          <p class="text-primary-800">Envía los requisitos solicitados.</p>
         </div>
 
         <div class="space-y-3">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700">
-            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
-              <path fill="rgb(255, 255, 255)" d="M48 195.8l209.2 86.1c9.8 4 20.2 6.1 30.8 6.1s21-2.1 30.8-6.1l242.4-99.8c9-3.7 14.8-12.4 14.8-22.1s-5.8-18.4-14.8-22.1L318.8 38.1C309 34.1 298.6 32 288 32s-21 2.1-30.8 6.1L14.8 137.9C5.8 141.6 0 150.3 0 160L0 456c0 13.3 10.7 24 24 24s24-10.7 24-24l0-260.2zm48 71.7L96 384c0 53 86 96 192 96s192-43 192-96l0-116.6-142.9 58.9c-15.6 6.4-32.2 9.7-49.1 9.7s-33.5-3.3-49.1-9.7L96 267.4z"/>
+          <div
+            class="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700"
+          >
+            <svg
+              class="h-8 w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              aria-hidden="true"
+            >
+              <path
+                fill="rgb(255, 255, 255)"
+                d="M48 195.8l209.2 86.1c9.8 4 20.2 6.1 30.8 6.1s21-2.1 30.8-6.1l242.4-99.8c9-3.7 14.8-12.4 14.8-22.1s-5.8-18.4-14.8-22.1L318.8 38.1C309 34.1 298.6 32 288 32s-21 2.1-30.8 6.1L14.8 137.9C5.8 141.6 0 150.3 0 160L0 456c0 13.3 10.7 24 24 24s24-10.7 24-24l0-260.2zm48 71.7L96 384c0 53 86 96 192 96s192-43 192-96l0-116.6-142.9 58.9c-15.6 6.4-32.2 9.7-49.1 9.7s-33.5-3.3-49.1-9.7L96 267.4z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold">3. Proceso de seleccion</h3>
-          <p class="text-primary-800">
-            Evaluamos tu perfil y te contactamos.
-          </p>
+          <p class="text-primary-800">Evaluamos tu perfil y te contactamos.</p>
         </div>
       </div>
 
       <div class="mt-10 text-center">
-        <a href="/aplicacion" class="rounded-lg bg-primary-700 px-8 py-3 font-semibold text-white shadow-sm hover:bg-primary-800">
+        <a
+          href="/aplicacion"
+          class="rounded-lg bg-primary-700 px-8 py-3 font-semibold text-white shadow-sm hover:bg-primary-800"
+        >
           Iniciar aplicación
         </a>
       </div>
@@ -88,11 +191,15 @@ import GuatemalaMap from '../components/GuatemalaMap.astro';
 
   <section class="bg-secondary-soft">
     <div class="mx-auto max-w-7xl px-4 py-16">
-      <h2 class="animate fade-in mb-12 text-center text-4xl font-extrabold text-primary-700">
+      <h2
+        class="animate fade-in mb-12 text-center text-4xl font-extrabold text-primary-700"
+      >
         Historias que inspiran
       </h2>
       <div class="animate fade-in delay-500 grid gap-8 md:grid-cols-3">
-        <div class="overflow-hidden rounded-lg border border-primary-600 bg-primary-700 text-white shadow-lg">
+        <div
+          class="overflow-hidden rounded-lg border border-primary-600 bg-primary-700 text-white shadow-lg"
+        >
           <img
             class="aspect-square w-full object-cover"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
@@ -101,12 +208,15 @@ import GuatemalaMap from '../components/GuatemalaMap.astro';
           />
           <div class="p-6">
             <p class="mb-5 text-primary-50">
-              "Gracias a la beca pude continuar mis estudios y ahora soy profesional."
+              "Gracias a la beca pude continuar mis estudios y ahora soy
+              profesional."
             </p>
             <h3 class="font-bold text-white">Arellys Cuá</h3>
           </div>
         </div>
-        <div class="overflow-hidden rounded-lg border border-primary-600 bg-primary-700 text-white shadow-lg">
+        <div
+          class="overflow-hidden rounded-lg border border-primary-600 bg-primary-700 text-white shadow-lg"
+        >
           <img
             class="aspect-square w-full object-cover"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
@@ -120,7 +230,9 @@ import GuatemalaMap from '../components/GuatemalaMap.astro';
             <h3 class="font-bold text-white">Jonathan Aguilar</h3>
           </div>
         </div>
-        <div class="overflow-hidden rounded-lg border border-primary-600 bg-primary-700 text-white shadow-lg">
+        <div
+          class="overflow-hidden rounded-lg border border-primary-600 bg-primary-700 text-white shadow-lg"
+        >
           <img
             class="aspect-square w-full object-cover"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
@@ -138,113 +250,127 @@ import GuatemalaMap from '../components/GuatemalaMap.astro';
     </div>
   </section>
 
-
-
   <section class="bg-white">
-  <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-16 text-center sm:grid-cols-3">
-
-    <!-- Jóvenes becados -->
-    <div class="animate fade-up">
-      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600">
-        <svg
-          class="h-8 w-8"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512"
-          fill="currentColor"
+    <div
+      class="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-16 text-center sm:grid-cols-3"
+    >
+      <!-- Jóvenes becados -->
+      <div class="animate fade-up">
+        <div
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600"
         >
-          <path d="M241.3-13c-11.4-2.3-23.1-2.3-34.5 0L19.3 24.5C8.1 26.7 0 36.6 0 48 0 58.3 6.5 67.3 16 70.6L16 144 .3 222.6c-.2 .9-.3 1.9-.3 2.9 0 8 6.5 14.6 14.6 14.6l34.9 0c8 0 14.6-6.5 14.6-14.6 0-1-.1-1.9-.3-2.9L48 144 48 77.3 96 86.9 96 144c0 70.7 57.3 128 128 128s128-57.3 128-128l0-57.1 76.7-15.3C439.9 69.3 448 59.4 448 48s-8.1-21.3-19.3-23.5L241.3-13zM224 224c-44.2 0-80-35.8-80-80l160 0c0 44.2-35.8 80-80 80zM120.1 320.1C58.7 348.3 16 410.3 16 482.3 16 498.7 29.3 512 45.7 512l154.3 0 0-146-57.4-43c-6.5-4.9-15.2-6.2-22.6-2.8zM248 512l154.3 0c16.4 0 29.7-13.3 29.7-29.7 0-72-42.7-134-104.1-162.1-7.4-3.4-16.1-2.1-22.6 2.8l-57.4 43 0 146z"/>
-        </svg>
+          <svg
+            class="h-8 w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            fill="currentColor"
+          >
+            <path
+              d="M241.3-13c-11.4-2.3-23.1-2.3-34.5 0L19.3 24.5C8.1 26.7 0 36.6 0 48 0 58.3 6.5 67.3 16 70.6L16 144 .3 222.6c-.2 .9-.3 1.9-.3 2.9 0 8 6.5 14.6 14.6 14.6l34.9 0c8 0 14.6-6.5 14.6-14.6 0-1-.1-1.9-.3-2.9L48 144 48 77.3 96 86.9 96 144c0 70.7 57.3 128 128 128s128-57.3 128-128l0-57.1 76.7-15.3C439.9 69.3 448 59.4 448 48s-8.1-21.3-19.3-23.5L241.3-13zM224 224c-44.2 0-80-35.8-80-80l160 0c0 44.2-35.8 80-80 80zM120.1 320.1C58.7 348.3 16 410.3 16 482.3 16 498.7 29.3 512 45.7 512l154.3 0 0-146-57.4-43c-6.5-4.9-15.2-6.2-22.6-2.8zM248 512l154.3 0c16.4 0 29.7-13.3 29.7-29.7 0-72-42.7-134-104.1-162.1-7.4-3.4-16.1-2.1-22.6 2.8l-57.4 43 0 146z"
+            ></path>
+          </svg>
+        </div>
+
+        <p class="text-success-500 text-4xl font-extrabold">
+          +<span class="stat" data-target="2000">0</span>
+        </p>
+
+        <p class="mt-2 text-primary-800">Jóvenes becados</p>
       </div>
 
-      <p class="text-4xl font-extrabold text-primary-700">
-        +<span class="stat" data-target="2000">0</span>
-      </p>
-
-      <p class="mt-2 text-primary-800">
-        Jóvenes becados
-      </p>
-    </div>
-
-    <!-- Departamentos -->
-    <div class="animate fade-up delay-100">
-      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600">
-        <svg
-          class="h-8 w-8"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 384 512"
-          fill="currentColor"
+      <!-- Departamentos -->
+      <div class="animate fade-up delay-100">
+        <div
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600"
         >
-          <path d="M0 188.6C0 84.4 86 0 192 0S384 84.4 384 188.6c0 119.3-120.2 262.3-170.4 316.8-11.8 12.8-31.5 12.8-43.3 0-50.2-54.5-170.4-197.5-170.4-316.8zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"/>
-        </svg>
+          <svg
+            class="h-8 w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+            fill="currentColor"
+          >
+            <path
+              d="M0 188.6C0 84.4 86 0 192 0S384 84.4 384 188.6c0 119.3-120.2 262.3-170.4 316.8-11.8 12.8-31.5 12.8-43.3 0-50.2-54.5-170.4-197.5-170.4-316.8zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"
+            ></path>
+          </svg>
+        </div>
+
+        <p class="text-success-500 text-4xl font-extrabold">
+          +<span class="stat" data-target="5">0</span>
+        </p>
+
+        <p class="mt-2 text-primary-800">Departamentos</p>
       </div>
 
-      <p class="text-4xl font-extrabold text-primary-700">
-        +<span class="stat" data-target="5">0</span>
-      </p>
-
-      <p class="mt-2 text-primary-800">
-        Departamentos
-      </p>
-    </div>
-
-    <!-- Años -->
-    <div class="animate fade-up delay-200">
-      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600">
-        <svg
-          class="h-8 w-8"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 576 512"
-          fill="currentColor"
+      <!-- Años -->
+      <div class="animate fade-up delay-200">
+        <div
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600"
         >
-          <path d="M268.9 53.2L152.3 182.8c-4.6 5.1-4.4 13 .5 17.9 30.5 30.5 80 30.5 110.5 0l31.8-31.8c4.2-4.2 9.5-6.5 14.9-6.9 6.8-.6 13.8 1.7 19 6.9L505.6 344 576 288 576 0 464 64 440.2 48.1C424.4 37.6 405.9 32 386.9 32l-70.4 0c-1.1 0-2.3 0-3.4 .1-16.9 .9-32.8 8.5-44.2 21.1zM116.6 150.7L223.4 32 183.8 32c-25.5 0-49.9 10.1-67.9 28.1L0 192 0 544 144 408 156.4 418.3c23 19.2 52 29.7 81.9 29.7l15.7 0-7-7c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l41 41 9 0c19.1 0 37.8-4.3 54.8-12.3L359 409c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l32 32 17.5-17.5c8.9-8.9 11.5-21.8 7.6-33.1l-137.9-136.8-14.9 14.9c-49.3 49.3-129.1 49.3-178.4 0-23-23-23.9-59.9-2.2-84z"/>
-        </svg>
+          <svg
+            class="h-8 w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 576 512"
+            fill="currentColor"
+          >
+            <path
+              d="M268.9 53.2L152.3 182.8c-4.6 5.1-4.4 13 .5 17.9 30.5 30.5 80 30.5 110.5 0l31.8-31.8c4.2-4.2 9.5-6.5 14.9-6.9 6.8-.6 13.8 1.7 19 6.9L505.6 344 576 288 576 0 464 64 440.2 48.1C424.4 37.6 405.9 32 386.9 32l-70.4 0c-1.1 0-2.3 0-3.4 .1-16.9 .9-32.8 8.5-44.2 21.1zM116.6 150.7L223.4 32 183.8 32c-25.5 0-49.9 10.1-67.9 28.1L0 192 0 544 144 408 156.4 418.3c23 19.2 52 29.7 81.9 29.7l15.7 0-7-7c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l41 41 9 0c19.1 0 37.8-4.3 54.8-12.3L359 409c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l32 32 17.5-17.5c8.9-8.9 11.5-21.8 7.6-33.1l-137.9-136.8-14.9 14.9c-49.3 49.3-129.1 49.3-178.4 0-23-23-23.9-59.9-2.2-84z"
+            ></path>
+          </svg>
+        </div>
+
+        <p class=" text-success-500 text-4xl font-extrabold">
+          +<span class="stat" data-target="20">0</span>
+        </p>
+
+        <p class="mt-2 text-primary-800">Años de impacto</p>
       </div>
-
-      <p class="text-4xl font-extrabold text-primary-700">
-        +<span class="stat" data-target="20">0</span>
-      </p>
-
-      <p class="mt-2 text-primary-800">
-        Años de impacto
-      </p>
     </div>
-
-  </div>
-</section>
+  </section>
 
   <section class="bg-secondary-soft py-16">
     <div class="mx-auto max-w-7xl px-4">
-      <div class="animate fade-left delay-500 grid gap-12 md:grid-cols-2 items-center">
-      <GuatemalaMap class="w-full"/>
-      <div class="animate fade-up delay-500 flex flex-col text-left">
-        <h2 class="mb-6 text-4xl font-extrabold text-primary-700">
-          Nuestra presencia
-        </h2>
-        <p class="mb-8 text-primary-800">
-          Operamos en los siguientes departamentos de Guatemala, llevando oportunidades a jóvenes de áreas rurales con alto potencial.
-        </p>
-        <ul class="list-disc list-inside text-primary-800 space-y-3">
-          <li class="font-semibold">Totonicapán</li>
-          <li class="font-semibold">Sololá</li>
-          <li class="font-semibold">San Marcos</li>
-          <li class="font-semibold">Huehuetenango</li>
-          <li class="font-semibold">Quiché</li>
-        </ul>
-      </div>
+      <div
+        class="animate fade-left delay-500 grid gap-12 md:grid-cols-2 items-center"
+      >
+        <GuatemalaMap class="w-full" />
+        <div class="animate fade-up delay-500 flex flex-col text-left">
+          <h2 class="mb-6 text-4xl font-extrabold text-primary-700">
+            Nuestra presencia
+          </h2>
+          <p class="mb-8 text-primary-800">
+            Operamos en los siguientes departamentos de Guatemala, llevando
+            oportunidades a jóvenes de áreas rurales con alto potencial.
+          </p>
+          <ul class="list-disc list-inside text-primary-800 space-y-3">
+            <li class="font-semibold">Totonicapán</li>
+            <li class="font-semibold">Sololá</li>
+            <li class="font-semibold">San Marcos</li>
+            <li class="font-semibold">Huehuetenango</li>
+            <li class="font-semibold">Quiché</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="bg-white">
-    <div class="animate lift delay-500 mx-auto max-w-7xl px-4 py-16 text-center">
+    <div
+      class="animate lift delay-500 mx-auto max-w-7xl px-4 py-16 text-center"
+    >
       <div class="mx-auto max-w-3xl">
         <h2 class="mb-4 text-4xl font-extrabold text-primary-700">
           ¿Quienes somos?
         </h2>
         <p class="mb-6 text-primary-800">
-          Somos una fundacion comprometida con el desarrollo educativo en Guatemala, enfocada en brindar oportunidades a jóvenes con alto potencial.
+          Somos una fundacion comprometida con el desarrollo educativo en
+          Guatemala, enfocada en brindar oportunidades a jóvenes con alto
+          potencial.
         </p>
-        <a href="/nosotros" class="font-medium text-primary-700 hover:underline">
+        <a
+          href="/nosotros"
+          class="font-medium text-primary-700 hover:underline"
+        >
           Conocer más
         </a>
       </div>
@@ -252,14 +378,17 @@ import GuatemalaMap from '../components/GuatemalaMap.astro';
   </section>
 
   <section class="bg-primary-700">
-    <div class="animate rotate-in delay-500 mx-auto max-w-5xl px-4 py-16 text-center">
+    <div
+      class="animate rotate-in delay-500 mx-auto max-w-5xl px-4 py-16 text-center"
+    >
       <h2 class="mb-4 text-3xl font-extrabold text-white md:text-4xl">
         ¡Tu futuro puede empezar hoy!
       </h2>
-      <p class="mb-6 text-white">
-        Aplica a una beca y cambia tu historia.
-      </p>
-      <a href="/aplicacion" class="rounded-lg bg-white px-6 py-3 font-semibold text-primary-700 hover:bg-primary-100">
+      <p class="mb-6 text-white">Aplica a una beca y cambia tu historia.</p>
+      <a
+        href="/aplicacion"
+        class="rounded-lg bg-accent-400 px-6 py-3 font-semibold text-white hover:bg-primary-100"
+      >
         Aplicar ahora
       </a>
     </div>
