@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import GuatemalaMap from "../components/GuatemalaMap.astro";
+import { getDailyQuote } from "../scripts/dailyQuotes";
+const dailyQuote = getDailyQuote();
+
 ---
 
 <Layout>
@@ -101,6 +104,19 @@ import GuatemalaMap from "../components/GuatemalaMap.astro";
   </div>
 </section>
 
+  <section class="bg-primary-950 py-10">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+
+      <blockquote class="text-xl italic text-white/90 md:text-2xl">
+        “{dailyQuote.quote}”
+      </blockquote>
+
+      <p class="mt-4 text-sm font-semibold tracking-wide text-white/60">
+        — {dailyQuote.author}
+      </p>
+
+    </div>
+  </section>
   <section id="como-aplicar" class="animate fade-up delay-1000 bg-white">
     <div class="mx-auto max-w-7xl px-4 py-16">
       <div class="mx-auto mb-12 max-w-3xl text-center">
@@ -257,8 +273,7 @@ import GuatemalaMap from "../components/GuatemalaMap.astro";
       <!-- Jóvenes becados -->
       <div class="animate fade-up">
         <div
-          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600"
-        >
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-success-500">
           <svg
             class="h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"
@@ -281,7 +296,7 @@ import GuatemalaMap from "../components/GuatemalaMap.astro";
       <!-- Departamentos -->
       <div class="animate fade-up delay-100">
         <div
-          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600"
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-success-500"
         >
           <svg
             class="h-8 w-8"
@@ -305,7 +320,7 @@ import GuatemalaMap from "../components/GuatemalaMap.astro";
       <!-- Años -->
       <div class="animate fade-up delay-200">
         <div
-          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-600"
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-success-500"
         >
           <svg
             class="h-8 w-8"
@@ -355,27 +370,52 @@ import GuatemalaMap from "../components/GuatemalaMap.astro";
   </section>
 
   <section class="bg-white">
-    <div
-      class="animate lift delay-500 mx-auto max-w-7xl px-4 py-16 text-center"
-    >
-      <div class="mx-auto max-w-3xl">
+  <div
+    class="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center"
+  >
+
+    <!-- Imagen -->
+    <div class="animate zoom-fade delay-200">
+      <img
+        src="/public/images/2019 FACILITADORES.jpg"
+        alt="Equipo de la Fundación Transformando Vidas"
+        class="h-full max-h-125 w-full rounded-2xl object-cover shadow-xl"
+      />
+    </div>
+
+    <!-- Texto -->
+    <div class="animate lift delay-500 text-center md:text-left">
+      <div class="max-w-xl">
+
+        <span
+          class="mb-3 inline-block rounded-full bg-primary-50 px-4 py-1 text-sm font-semibold text-primary-600"
+        >
+          Nuestra misión
+        </span>
+
         <h2 class="mb-4 text-4xl font-extrabold text-primary-700">
-          ¿Quienes somos?
+          ¿Quiénes somos?
         </h2>
-        <p class="mb-6 text-primary-800">
-          Somos una fundacion comprometida con el desarrollo educativo en
+
+        <p class="mb-6 text-lg leading-relaxed text-primary-800">
+          Somos una fundación comprometida con el desarrollo educativo en
           Guatemala, enfocada en brindar oportunidades a jóvenes con alto
-          potencial.
+          potencial para que puedan transformar su futuro y el de sus
+          comunidades.
         </p>
+
         <a
           href="/nosotros"
-          class="font-medium text-primary-700 hover:underline"
+          class="inline-flex items-center rounded-lg bg-primary-700 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-primary-800 hover:shadow-md"
         >
           Conocer más
         </a>
+
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <section class="bg-primary-700">
     <div

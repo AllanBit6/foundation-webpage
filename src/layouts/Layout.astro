@@ -3,6 +3,12 @@ import NavBar from '../components/NavBar.astro'
 import Footer from '../components/Footer.astro'
 import { ClientRouter } from "astro:transitions";
 import '../styles/global.css'
+
+import Swiper from "swiper";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 ---
 
 <!doctype html>
@@ -150,6 +156,35 @@ import '../styles/global.css'
 				});
 			}
 
+			function initTeamSwiper() {
+				const slider = document.querySelector(".teamSwiper");
+
+				if (!slider) return;
+
+				// destruir si ya existe
+				if (slider.swiper) {
+					slider.swiper.destroy(true, true);
+				}
+
+				new Swiper(slider, {
+					modules: [Navigation, Autoplay],
+
+					loop: true,
+
+					speed: 700,
+
+					autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+					},
+
+					navigation: {
+					nextEl: slider.querySelector(".swiper-button-next"),
+					prevEl: slider.querySelector(".swiper-button-prev"),
+					},
+				});
+			}
+
 			/* =========================
 				INIT EVERYTHING
 			========================= */
@@ -158,6 +193,7 @@ import '../styles/global.css'
 				initObserver();
 				initStatsCounter();
 				initMobileMenu();
+				initTeamSwiper();
 				});
 			}
 

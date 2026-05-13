@@ -14,7 +14,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para continuar estudios en auditoria, administracion, economia, derecho, negocios o comercio internacional.",
     ],
-    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778217398/accounting_gnrtvh.mp4",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/q_auto/f_auto/v1778692155/Accounting_Gnrtvh_ly7dy8.mp4",
   },
   {
     nombre: "Perito en Electronica con especialidad en desarrollo de software y mantenimiento de equipos digitales.",
@@ -27,7 +27,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para estudiar sistemas, electronica, telecomunicaciones, robotica, inteligencia artificial o seguridad informatica.",
     ],
-    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129440/Electronicas_oya8b2.mp4",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/q_auto/f_auto/v1778692159/Electronicas_Oya8b2-00.00.00.000-00.00.20.301_zsqim5.mp4",
   },
   {
     nombre: "Bachillerato en Ciencias Biologicas con enfasis en medicina alternativa y enfermeria.",
@@ -40,7 +40,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para continuar en medicina, enfermeria, nutricion, odontologia, psicologia, biologia o carreras afines a la salud.",
     ],
-    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129573/Medicina-Enfermeria_a0e9pa.mp4",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/q_auto/f_auto/v1778692212/Medicina-Enfermeria_A0e9pa-00.00.02.417-00.01.06.998_ipdw6i.mp4",
   },
   {
     nombre: "Perito en mecanica automotriz, con especializacion en administracion de talleres.",
@@ -53,7 +53,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para estudiar mecanica automotriz, mecanica industrial, ingenieria, tecnologia o areas productivas relacionadas.",
     ],
-    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129451/Mecanica_sn0yjk.mp4",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/q_auto/f_auto/v1778692287/Mecanica_Sn0yjk_oi7adr.mp4",
   },
   {
     nombre: "Bachillerato Bilingue en Ciencias y Humanidades",
@@ -66,7 +66,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Base para continuar estudios en salud, humanidades, tecnologia, ingenieria, ciencias sociales o carreras afines.",
     ],
-    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129575/Ciencias_Exactas_2_uaqtlk.webm",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/q_auto/f_auto/v1778692240/Ciencias_Exactas_2_Uaqtlk-00.00.00.000-00.00.46.523_nh1d14.mp4",
   },
   {
     nombre: "Basico Bilingue con enfasis en emprendimiento y liderazgo comunitario.",
@@ -79,7 +79,7 @@ const carreras = [
     oportunidadesUniversitarias: [
       "Prepara al estudiante para elegir carreras tecnicas, bilingues, cientificas, tecnologicas o de emprendimiento.",
     ],
-    video: "https://res.cloudinary.com/dnhistzl2/video/upload/v1778129572/Educaci%C3%B3n_Integral_xmyoqq.mp4",
+    video: "https://res.cloudinary.com/dnhistzl2/video/upload/q_auto/f_auto/v1778692340/Educaci%C3%B3n_Integral_Xmyoqq-00.00.04.431-00.00.24.939_axkio2.mp4",
   },
 ];
 ---
@@ -92,13 +92,13 @@ const carreras = [
   <section class="bg-secondary-soft">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div class="mx-auto mb-10 max-w-3xl text-center">
-        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+        <span class="animate pop-strong text-sm font-bold uppercase tracking-wide text-primary-600">
           Oferta educativa
         </span>
-        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+        <h2 class="animate fade-up mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
           Carreras que impulsan el desarrollo
         </h2>
-        <p class="mt-4 text-base leading-7 text-primary-800 sm:text-lg">
+        <p class="animate fade-left mt-4 text-base leading-7 text-primary-800 sm:text-lg">
           Estas son algunas de las areas profesionales que apoyamos para que cada estudiante pueda construir una trayectoria con proposito.
         </p>
       </div>
@@ -106,7 +106,7 @@ const carreras = [
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {carreras.map((carrera) => (
           <article class="group overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-            <div class="aspect-4/3 overflow-hidden bg-primary-100">
+            <div class="animate pop-strong delay-500 aspect-4/3 overflow-hidden bg-primary-100">
               {carrera.video ? (
                 <video
                   class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
@@ -126,14 +126,14 @@ const carreras = [
             </div>
 
             <div class="flex min-h-52 flex-col p-6">
-              <h3 class="font-heading text-xl font-bold text-primary-700">
+              <h3 class="animate rotate-in font-heading text-xl font-bold text-primary-700">
                 {carrera.nombre}
               </h3>
-              <p class="mt-3 text-sm leading-6 text-primary-800 sm:text-base">
+              <p class="animte fade-down mt-3 text-sm leading-6 text-primary-800 sm:text-base">
                 {carrera.descripcion}
               </p>
 
-              <div class="mt-5 rounded-lg bg-secondary-soft p-4">
+              <div class="animate pop mt-5 rounded-lg bg-secondary-soft p-4">
                 <span class="text-xs font-bold uppercase tracking-wide text-primary-600">
                   Duracion
                 </span>
@@ -174,7 +174,7 @@ const carreras = [
 
               <a
                 href="/aplicacion"
-                class="mt-6 inline-flex w-fit items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-200"
+                class="animate pop-strong mt-6 inline-flex w-fit items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-200"
               >
                 Aplicar ahora
               </a>

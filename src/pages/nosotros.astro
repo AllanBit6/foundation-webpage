@@ -27,23 +27,28 @@ const valores = [
 
 const equipo = [
   {
-    nombre: "Nombre Apellido",
-    rol: "Directora Ejecutiva",
-    imagen:
-      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png",
+    nombre: "Ma. Dolores Moreno",
+    rol: "Secretaria",
+    descripcion:
+      "María Dolores cuenta con más de tres décadas de experiencia en el sector empresarial, financiero y gerencial, tanto a nivel nacional como internacional. Es reconocida en distintos ámbitos por su gran trabajo y liderazgo.",
+    imagen: "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png",
   },
+
   {
-    nombre: "Nombre Apellido",
-    rol: "Coordinador Academico",
-    imagen:
-      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
+    nombre: "Juan Pérez",
+    rol: "Director Ejecutivo",
+    descripcion:
+      "Lidera la estrategia institucional y el desarrollo de alianzas para ampliar el impacto educativo de la fundación.",
+    imagen: "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png",
   },
+
   {
-    nombre: "Nombre Apellido",
-    rol: "Relaciones Institucionales",
-    imagen:
-      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png",
-  },
+    nombre: "Ana López",
+    rol: "Coordinadora Académica",
+    descripcion:
+      "Supervisa programas educativos y acompañamiento estudiantil en distintas comunidades.",
+    imagen: "https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png",
+  }
 ];
 
 const desafios = [
@@ -62,31 +67,81 @@ const desafios = [
   </SectionHero>
 
   <section class="bg-white">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
-      <div>
-        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
-          Nuestra historia
-        </span>
-        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
-          Educacion que abre caminos
-        </h2>
+  <div
+    class="mx-auto grid max-w-7xl gap-12 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8 lg:py-16"
+  >
+    
+    <!-- Panel de imágenes -->
+    <div class="grid grid-rows-3 gap-4 self-start">
+      
+      <div class="animate fade-up delay-100 overflow-hidden rounded-2xl shadow-md">
+        <img
+          src="public/images/historia1.jpg"
+          alt="Estudiantes beneficiados"
+          class="h-64 w-full object-cover transition duration-500 hover:scale-105"
+        />
       </div>
 
-      <div class="space-y-5 text-base leading-7 text-primary-800 sm:text-lg">
+      <div class="animate fade-up delay-200 overflow-hidden rounded-2xl shadow-md">
+        <img
+          src="/public/images/historia2.jpg"
+          alt="Trabajo comunitario"
+          class="h-64 w-full object-cover transition duration-500 hover:scale-105"
+        />
+      </div>
+
+      <div class="animate fade-up delay-300 overflow-hidden rounded-2xl shadow-md">
+        <img
+          src="/public/images/historia3.jpg"
+          alt="Impacto educativo"
+          class="h-64 w-full object-cover transition duration-500 hover:scale-105"
+        />
+      </div>
+
+    </div>
+
+    <!-- Texto -->
+    <div class="flex flex-col justify-center">
+      <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+        Nuestra historia
+      </span>
+
+      <h2
+        class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl"
+      >
+        Educación que abre caminos
+      </h2>
+
+      <div class="mt-6 space-y-5 text-base leading-7 text-primary-800 sm:text-lg">
         <p>
-          Somos un grupo de Jóvenes Guatemaltecos procedente del área rural del sur occidente de Guatemala,  en el año 2,001, recibimos una visión de desarrollo Rural Integral Sostenible, cuyo enfoque es desarrollar nuestras propias oportunidades, bajo el principio de ser agentes de cambio y multiplicador de conocimientos, mediante el compromiso de compartir las experiencias adquiridos en nuestros estudios fuera y dentro de nuestro país, con la esperanza de construir una nación más justa y desarrollada en favor de las personas de bajos ingresos del área rural de Guatemala.
+          Somos un grupo de jóvenes guatemaltecos procedentes del área rural
+          del sur occidente de Guatemala. En el año 2001 recibimos una visión
+          de desarrollo rural integral sostenible, cuyo enfoque es desarrollar
+          nuestras propias oportunidades bajo el principio de ser agentes de
+          cambio y multiplicadores de conocimiento.
         </p>
+
         <p>
-          Nuestro trabajo nace de una conviccion sencilla: cuando un joven recibe acompanamiento, formacion y oportunidades reales, tambien se transforma su familia y su comunidad.
+          Compartimos las experiencias adquiridas dentro y fuera de nuestro país
+          con la esperanza de construir una nación más justa y desarrollada en
+          favor de las personas de bajos ingresos del área rural de Guatemala.
+        </p>
+
+        <p>
+          Nuestro trabajo nace de una convicción sencilla: cuando un joven
+          recibe acompañamiento, formación y oportunidades reales, también se
+          transforma su familia y su comunidad.
         </p>
       </div>
     </div>
-  </section>
 
-  <section class="bg-secondary-soft">
+  </div>
+</section>
+
+  <section class="animate fade-left bg-secondary-soft">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div class="grid gap-6 lg:grid-cols-2">
-        <article class="rounded-lg border border-secondary/60 bg-white p-8 shadow-sm">
+        <article class="animate pop-strong rounded-lg border border-secondary/60 bg-white p-8 shadow-sm">
           <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
             Mision
           </span>
@@ -98,7 +153,7 @@ const desafios = [
           </p>
         </article>
 
-        <article class="rounded-lg border border-primary-700 bg-primary-700 p-8 text-white shadow-sm">
+        <article class="animate pop-strong delay-500 rounded-lg border border-primary-700 bg-primary-700 p-8 text-white shadow-sm">
           <span class="text-sm font-bold uppercase tracking-wide text-primary-100">
             Vision
           </span>
@@ -113,7 +168,7 @@ const desafios = [
     </div>
   </section>
 
-  <section class="bg-white">
+  <section class="animate pop bg-white">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div class="mx-auto mb-10 max-w-3xl text-center">
         <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
@@ -125,77 +180,131 @@ const desafios = [
       </div>
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {valores.map((valor) => (
-          <article class="rounded-lg border border-secondary/60 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 text-lg font-extrabold text-primary-700">
-              {valor.titulo.slice(0, 1)}
-            </div>
-            <h3 class="font-heading text-xl font-bold text-primary-700">
-              {valor.titulo}
-            </h3>
-            <p class="mt-3 text-sm leading-6 text-primary-800">
-              {valor.descripcion}
-            </p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+  {valores.map((valor) => (
+    <article
+      class="animate rotate-in delay-500 rounded-2xl border border-secondary/60 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:bg-primary-50/40 hover:shadow-lg"
+    >
 
-  <section class="bg-secondary-soft">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <div class="mx-auto mb-10 max-w-3xl text-center">
-        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
-          Equipo
-        </span>
-        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
-          Nuestro Equipo
-        </h2>
-        <p class="mt-4 text-base leading-7 text-primary-800">
-          Personas comprometidas con acompanar a cada estudiante en su camino academico y personal.
-        </p>
-      </div>
+      <!-- linea decorativa -->
+      <div class="mb-4 h-1 w-12 rounded-full bg-primary-500"></div>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {equipo.map((persona) => (
-          <article class="overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-            <div class="h-28 bg-primary-700"></div>
-            <div class="-mt-12 px-6 pb-6 text-center">
-              <img
-                class="mx-auto h-24 w-24 rounded-full border-4 border-white object-cover shadow-md"
-                src={persona.imagen}
-                alt={persona.nombre}
-                loading="lazy"
-              />
-              <h3 class="mt-4 font-heading text-xl font-bold text-primary-700">
-                {persona.nombre}
-              </h3>
-              <p class="mt-1 text-sm font-semibold text-primary-600">
-                {persona.rol}
-              </p>
-              <p class="mt-4 text-sm leading-6 text-primary-800">
-                Lidera procesos clave para fortalecer el impacto educativo de la fundacion.
-              </p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+      <h3 class="font-heading text-xl font-bold text-primary-700">
+        {valor.titulo}
+      </h3>
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
-      <h2 class="font-heading text-3xl font-extrabold text-primary-700">
-        Se parte del cambio
-      </h2>
-      <p class="mx-auto mt-4 max-w-2xl text-primary-800">
-        Tu apoyo puede transformar la vida de un estudiante.
+      <p class="mt-3 text-sm leading-6 text-primary-800">
+        {valor.descripcion}
       </p>
-      <a href="#" class="mt-6 inline-flex rounded-lg bg-primary-700 px-6 py-3 font-semibold text-white transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-200">
-        Involucrate
-      </a>
+    </article>
+  ))}
+</div>
     </div>
   </section>
+
+<section class="bg-secondary-soft py-20">
+  <div class="mx-auto max-w-6xl px-4">
+
+    <div class="mb-12 text-center">
+      <h2 class="text-4xl font-extrabold text-primary-700">
+        Nuestro equipo
+      </h2>
+      <p class="mt-4 text-primary-800">
+        Personas comprometidas con transformar vidas.
+      </p>
+    </div>
+
+    <div class="swiper teamSwiper overflow-hidden rounded-2xl shadow-xl bg-white">
+
+      <div class="swiper-wrapper">
+        {
+          equipo.map((persona) => (
+            <div class="swiper-slide">
+
+              <div class="grid md:grid-cols-2 min-h-105">
+
+                {/* Imagen */}
+                <div class="relative h-80 md:h-full">
+                  <img
+                    src={persona.imagen}
+                    alt={persona.nombre}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+
+                  <div class="absolute inset-0 bg-primary-950/10"></div>
+                </div>
+
+                {/* Texto */}
+                <div class="flex items-center px-8 py-10 md:px-12">
+                  <div>
+                    <h3 class="text-3xl font-bold text-primary-700">
+                      {persona.nombre}
+                    </h3>
+
+                    <p class="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary-500">
+                      {persona.rol}
+                    </p>
+
+                    <div class="mt-6 h-1 w-16 rounded-full bg-primary-300"></div>
+
+                    <p class="mt-6 text-lg leading-8 text-primary-800">
+                      {persona.descripcion}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- botones -->
+      <div class="swiper-button-prev text-primary-700!"></div>
+      <div class="swiper-button-next text-primary-700!"></div>
+
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    
+    <div
+      class="animate fade-up rounded-3xl bg-secondary-soft px-8 py-14 text-center shadow-sm"
+    >
+      
+      <span
+        class="text-sm font-bold uppercase tracking-wide text-primary-600"
+      >
+        Apoya nuestra misión
+      </span>
+
+      <h2
+        class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl"
+      >
+        Sé parte del cambio
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-primary-800">
+        Cada aporte abre oportunidades, impulsa sueños y transforma
+        comunidades enteras. Tu apoyo puede marcar la diferencia en la vida
+        de un joven guatemalteco.
+      </p>
+
+      <div class="mt-8">
+        <a
+          href="/involucrate"
+          class="inline-flex rounded-xl bg-success-500 px-8 py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-success-600 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-success-200"
+        >
+          Quiero involucrarme
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <section class="bg-secondary-soft">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-16">
@@ -317,7 +426,7 @@ const desafios = [
           <div class="min-h-72 lg:order-last">
             <img
               class="h-full w-full object-cover"
-              src="/images/DSC_0416.JPG"
+              src="/public/images/proyectoambiente.jpg"
               alt="Jovenes participando en una actividad educativa"
               loading="lazy"
             />
@@ -328,7 +437,7 @@ const desafios = [
           <div class="min-h-72">
             <img
               class="h-full w-full object-cover"
-              src="/images/IMG_0750.JPG"
+              src="/public/images/trabajoambiente.jpg"
               alt="Estudiantes en actividad de formacion comunitaria"
               loading="lazy"
             />
