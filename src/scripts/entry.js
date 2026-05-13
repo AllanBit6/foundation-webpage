@@ -1,6 +1,12 @@
-import { runApp } from "./main.js";
+  import { runApp } from "../scripts/main.js";
 
-runApp();
+  const run = () => {
+    requestAnimationFrame(() => {
+      runApp();
+    });
+  };
 
-document.addEventListener("astro:page-load", runApp);
-document.addEventListener("astro:after-swap", runApp);
+  run();
+
+  document.addEventListener("astro:page-load", run);
+  document.addEventListener("astro:after-swap", run);
