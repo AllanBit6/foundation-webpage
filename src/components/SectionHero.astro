@@ -3,7 +3,7 @@ const { title, video, image } = Astro.props;
 const hasMedia = Boolean(video || image);
 ---
 
-<section class={`animate-zoomFade section-hero relative flex min-h-[70vh] items-center overflow-hidden ${hasMedia ? 'bg-primary-900' : 'bg-primary-700'}`}>
+<section class={`section-hero relative flex min-h-[70svh] items-center overflow-hidden ${hasMedia ? 'bg-primary-900' : 'bg-primary-700'}`}>
 
   {video && (
     <video 
@@ -27,7 +27,7 @@ const hasMedia = Boolean(video || image);
 
   <div class={`absolute inset-0 ${hasMedia ? 'bg-primary-950/55' : 'bg-primary-800'}`}></div>
 
-  <div class="relative mx-auto max-w-7xl px-4 text-center">
+  <div class="animate-zoomFade relative mx-auto max-w-7xl px-4 text-center">
     <h1 class="mb-4 font-heading text-4xl font-extrabold text-white md:text-5xl lg:text-6xl">
       {title}
     </h1>

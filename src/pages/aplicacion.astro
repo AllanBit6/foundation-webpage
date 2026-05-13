@@ -13,34 +13,45 @@ import SectionHero from '../components/SectionHero.astro';
   <section class="bg-secondary-soft">
     <div class="max-w-7xl mx-auto px-4 py-16">
 
-      <div class="grid md:grid-cols-4 gap-8 text-center">
+      <div class="animate pop-strong delay-300 relative grid md:grid-cols-4 gap-8 text-center">
 
-        <div class="space-y-3">
-          <div class="text-3xl">📝</div>
+        <!-- línea conectora -->
+        <div class="hidden md:block absolute top-6 left-0 right-0 h-px bg-primary-200"></div>
+
+        <div class="timeline-step relative space-y-3">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-white font-bold shadow">
+            1
+          </div>
           <h3 class="font-bold">Registro</h3>
           <p class="text-primary-800 text-sm">
             Completa el formulario inicial con tus datos personales.
           </p>
         </div>
 
-        <div class="space-y-3">
-          <div class="text-3xl">📄</div>
+        <div class="timeline-step relative space-y-3">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-white font-bold shadow">
+            2
+          </div>
           <h3 class="font-bold">Documentación</h3>
           <p class="text-primary-800 text-sm">
             Adjunta papelería requerida (notas, DPI, etc.).
           </p>
         </div>
 
-        <div class="space-y-3">
-          <div class="text-3xl">📊</div>
+        <div class="timeline-step relative space-y-3">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-white font-bold shadow">
+            3
+          </div>
           <h3 class="font-bold">Evaluación</h3>
           <p class="text-primary-800 text-sm">
             Revisamos tu perfil académico y situación socioeconómica.
           </p>
         </div>
 
-        <div class="space-y-3">
-          <div class="text-3xl">🎓</div>
+        <div class="timeline-step relative space-y-3">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-white font-bold shadow">
+            4
+          </div>
           <h3 class="font-bold">Selección</h3>
           <p class="text-primary-800 text-sm">
             Te notificamos si fuiste seleccionado.
@@ -56,22 +67,22 @@ import SectionHero from '../components/SectionHero.astro';
   <section class="bg-white">
     <div class="max-w-5xl mx-auto px-4 py-16">
 
-      <h2 class="text-3xl font-extrabold text-primary-700 mb-6 text-center">
+      <h2 class="animate fade-up text-3xl font-extrabold text-primary-700 mb-6 text-center">
         Requisitos básicos
       </h2>
 
       <ul class="space-y-4 text-primary-800 max-w-2xl mx-auto">
-        <li>• Ser estudiante graduado de nivel medio</li>
-        <li>• Demostrar necesidad económica</li>
-        <li>• Tener alto rendimiento académico</li>
-        <li>• Compromiso con su comunidad</li>
+        <li class="animate rotate-in delay-100">• Ser estudiante graduado de 6to Primaria o 3ro Basico</li>
+        <li class="animate rotate-in delay-300">• Demostrar situación económica vulnerable</li>
+        <li class="animate rotate-in delay-400">• Tener alto rendimiento académico y excelencia</li>
+        <li class="animate rotate-in delay-500">• Compromiso con su comunidad</li>
       </ul>
 
     </div>
   </section>
 
   <!-- FORMULARIO (placeholder) -->
-  <section id="formulario" class="bg-secondary-soft">
+  <section id="formulario" class="animate pop bg-secondary-soft">
     <div class="max-w-3xl mx-auto px-4 py-16 text-center">
 
       <h2 class="text-3xl font-extrabold text-primary-700 mb-4">
@@ -91,7 +102,7 @@ import SectionHero from '../components/SectionHero.astro';
   </section>
 
   <!-- CARRERAS -->
-  <section class="bg-white">
+  <section class="animate fade-up bg-white">
     <div class="max-w-7xl mx-auto px-4 py-16">
 
       <div class="text-center max-w-3xl mx-auto mb-12">
@@ -106,7 +117,7 @@ import SectionHero from '../components/SectionHero.astro';
       <div class="grid md:grid-cols-3 gap-8">
 
         <!-- Card -->
-        <div class="bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
+        <div class="animate pop-strong delay-100 bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
           <h3 class="text-xl font-bold mb-2">Perito Contador Bilingüe</h3>
           <p class="text-sm text-primary-800 mb-2">
             <span class="font-medium">Duración:</span> 3 años
@@ -116,7 +127,7 @@ import SectionHero from '../components/SectionHero.astro';
           </p>
         </div>
 
-        <div class="bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
+        <div class="animate pop-strong delay-300 bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
           <h3 class="text-xl font-bold mb-2">Perito en Electrónica y Dispositivos Móviles</h3>
           <p class="text-sm text-primary-800 mb-2">
             <span class="font-medium">Duración:</span> 3 años
@@ -125,7 +136,7 @@ import SectionHero from '../components/SectionHero.astro';
             <span class="font-medium">Campo laboral:</span> Reparación de dispositivos móviles, soporte técnico, ventas de tecnología, desarrollo de software a medida.
         </div>
 
-        <div class="bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
+        <div class="animate pop-strong delay-300 bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
           <h3 class="text-xl font-bold mb-2">Perito en Mecánica Automotriz</h3>
           <p class="text-sm text-primary-800 mb-2">
             <span class="font-medium">Duración:</span> 3 años
@@ -134,7 +145,7 @@ import SectionHero from '../components/SectionHero.astro';
             <span class="font-medium">Campo laboral:</span> Talleres de reparación, concesionarios, empresas de transporte, servicio técnico.
         </div>
 
-        <div class="bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
+        <div class="animate pop-strong delay-300 bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
           <h3 class="text-xl font-bold mb-2">Bachiller en Enfermería y Ciencias Biológicas</h3>
           <p class="text-sm text-primary-800 mb-2">
             <span class="font-medium">Duración:</span> 2 años
@@ -145,7 +156,7 @@ import SectionHero from '../components/SectionHero.astro';
         </div>
 
 
-        <div class="bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
+        <div class="animate pop-strong delay-300 bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
           <h3 class="text-xl font-bold mb-2">Bachiller Bilingüe</h3>
           <p class="text-sm text-primary-800 mb-2">
             <span class="font-medium">Duración:</span> 2 años
@@ -155,7 +166,7 @@ import SectionHero from '../components/SectionHero.astro';
           </p>
         </div>
 
-        <div class="bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
+        <div class="animate pop-strong delay-300 bg-secondary-soft p-6 rounded-lg border border-secondary/60 hover:shadow-md transition">
           <h3 class="text-xl font-bold mb-2">Educación Básica Completa</h3>
           <p class="text-sm text-primary-800 mb-2">
             <span class="font-medium">Duración:</span> 3 años
