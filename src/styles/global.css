@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
 
+/* =========================
+   🎨 THEME
+========================= */
 @theme {
   --color-primary-50: #f4f4fb;
   --color-primary-100: #e7e8f5;
@@ -21,23 +24,174 @@
   --font-heading: "Source Sans 3", "Source Sans Pro", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* =========================
+   BASE GLOBAL
+========================= */
 :root {
   color: #20203a;
   background: #ffffff;
-  font-family: "Inter", "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
 body {
   background: #ffffff;
   color: #20203a;
-  font-family: "Inter", "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  font-family: "Source Sans 3", "Source Sans Pro", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: 0;
 }
 
 a {
-  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  transition: color 160ms ease, background-color 160ms ease,
+              border-color 160ms ease, box-shadow 160ms ease;
 }
+
+/* =========================
+   KEYFRAMES (ON LOAD ONLY)
+========================= */
+
+@keyframes slideInDown {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes zoomFade {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* =========================
+   ON LOAD ANIMATIONS
+========================= */
+
+.animate-slideInDown {
+  animation: slideInDown 0.8s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-pop {
+  animation: pop 0.7s ease-out forwards;
+}
+
+.animate-zoomFade {
+  animation: zoomFade 0.7s ease-out forwards;
+}
+
+/* =========================
+   INTERSECTION OBSERVER SYSTEM
+   (scroll reveal)
+========================= */
+
+.animate {
+  opacity: 0;
+  transition: all 0.7s ease-out;
+  will-change: transform, opacity;
+}
+
+/* FADE UP */
+.fade-up {
+  transform: translateY(25px);
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FADE LEFT */
+.fade-left {
+  transform: translateX(-25px);
+}
+
+.fade-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* FADE RIGHT */
+.fade-right {
+  transform: translateX(25px);
+}
+
+.fade-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* FADE IN */
+.fade-in {
+  opacity: 0;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+/* POP */
+.pop {
+  transform: scale(0.9);
+}
+
+.pop.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ZOOM FADE */
+.zoom-fade {
+  transform: scale(0.95);
+}
+
+.zoom-fade.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-500 { transition-delay: 500ms; }
