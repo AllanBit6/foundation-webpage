@@ -16,7 +16,7 @@ export function initMobileMenu() {
     );
 
     menu.classList.add(
-      "max-h-96",
+      "max-h-screen",
       "opacity-100",
       "translate-y-0",
       "pointer-events-auto"
@@ -27,7 +27,7 @@ export function initMobileMenu() {
 
   function closeMenu() {
     menu.classList.remove(
-      "max-h-96",
+      "max-h-screen",
       "opacity-100",
       "translate-y-0",
       "pointer-events-auto"
@@ -44,7 +44,7 @@ export function initMobileMenu() {
   }
 
   freshBtn.addEventListener("click", () => {
-    const isOpen = menu.classList.contains("max-h-96");
+    const isOpen = menu.classList.contains("max-h-screen");
 
     if (isOpen) {
       closeMenu();
