@@ -28,10 +28,22 @@ import '../styles/global.css'
 		<NavBar />
 		<slot />
 		<Footer />
-
-		<script type="module" src="/src/scripts/entry.js">
-		</script>
 	</body>
+
+	<script>
+		import { runApp } from "../scripts/main.js";
+
+		const run = () => {
+			window.requestAnimationFrame(() => {
+			runApp();
+			});
+		};
+
+		run();
+
+		document.addEventListener("astro:page-load", run);
+		document.addEventListener("astro:after-swap", run);
+	</script>
 </html>
 
 <style>

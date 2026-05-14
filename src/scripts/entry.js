@@ -1,4 +1,4 @@
-  import { runApp } from "../scripts/main.js";
+  import { runApp } from "./main.js";
 
   const run = () => {
     requestAnimationFrame(() => {
