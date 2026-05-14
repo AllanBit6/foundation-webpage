@@ -4,32 +4,32 @@ import SectionHero from '../components/SectionHero.astro';
 
 const logros = [
   {
-    titulo: "Graduacion de becados",
-    fecha: "2026",
+    titulo: "Enseñanza del Idioma Inglés",
+    fecha: "----",
     descripcion:
-      "Estudiantes culminaron una etapa academica importante gracias al acompanamiento educativo y familiar.",
-    imagen: "",
+      "Hemos entrenado en el idioma inglés, computación, matemáticas aplicadas, creatividad, emprendimiento social, hábitos y valores judeocristianos para el progreso, conservación del medio ambiente a más de 7,000 jóvenes y niños provenientes del área rural de los departamentos de Totonicapán, Chiquimula, Quetzaltenango, Sololá, Quiche y Huehuetenango..",
+    imagen: "/public/images/ingles.jpg",
   },
   {
-    titulo: "Entrega de becas",
-    fecha: "2025",
+    titulo: "Escuela de Padres",
+    fecha: "2016",
     descripcion:
-      "Nuevos jovenes se integraron al programa para continuar sus estudios con mejores oportunidades.",
-    imagen: "",
+      "A través de la Escuela de Padres de familia, se han capacitado a más de 3,000 padres de familia en temas de Finanzas personales, emprendimiento social, liderazgo comunitario, ética y hábitos del progreso, nutrición comunitaria, medicina alternativa, formación ciudadana y política, entre otros temas de alto interés para el desarrollo sostenible de las familias rurales..",
+    imagen: "/public/images/escuela20216.jpg",
   },
   {
-    titulo: "Talleres de liderazgo",
-    fecha: "2025",
+    titulo: "Apadrinamiento",
+    fecha: "----",
     descripcion:
-      "Se fortalecieron habilidades personales, comunicacion y trabajo en equipo en estudiantes beneficiados.",
-    imagen: "",
+      "En los últimos 10 años se ha apadrinado con becas a más de 6.000 estudiantes para culminar sus estudios de educación básica y bachillerato, así mismo el entrenamiento de centenas de estudiantes para aplicarse a becas en las mejores universidades locales, fundaciones guatemaltecas y en el extranjero. .",
+    imagen: "/public/images/apadrinamiento.jpg",
   },
   {
-    titulo: "Acompanamiento academico",
-    fecha: "2024",
+    titulo: "Graduacion de estudiantes",
+    fecha: "2023",
     descripcion:
-      "Mentores y coordinadores brindaron seguimiento cercano para impulsar la permanencia estudiantil.",
-    imagen: "",
+      "Estudiantes y padres de familia celebraron la graduación de alrededor de 150 estudiantes que culminaron sus estudios de las diferentes carreras diversificadas (biología, electrónica, mecánica automotriz, perito contador y bachillerato bilingüe) en el año 2023, con la presencia de autoridades locales, familiares y amigos.",
+    imagen: "/public/images/graduacion2023.jpg",
   },
   {
     titulo: "Alianzas institucionales",
@@ -73,26 +73,48 @@ const videos = [
   </SectionHero>
 
   <section class="bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <div class="mx-auto mb-10 max-w-3xl text-center">
-        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
-          Galeria de logros
-        </span>
-        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
-          Momentos que cuentan nuestra historia
-        </h2>
-        <p class="mt-4 text-base leading-7 text-primary-800 sm:text-lg">
-          Cada logro representa un paso adelante en nuestra mision de transformar vidas a traves de la educacion, el acompanamiento y las oportunidades que brindamos a jovenes de areas rurales en Guatemala.
-        </p>
-      </div>
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 
-      <div class="grid auto-rows-[minmax(280px,auto)] grid-cols-1 gap-6 md:grid-cols-4">
-        {logros.map((logro, index) => (
-          <article class={`group overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${index === 0 || index === 3 ? 'md:col-span-2 md:row-span-2' : 'md:col-span-2 lg:col-span-1'}`}>
-            <div class={`${index === 0 || index === 3 ? 'aspect-4/3 md:aspect-auto md:h-80' : 'aspect-4/3'} overflow-hidden bg-primary-100`}>
+    <div class="mx-auto mb-10 max-w-3xl text-center">
+      <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+        Galeria de logros
+      </span>
+
+      <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+        Momentos que cuentan nuestra historia
+      </h2>
+
+      <p class="mt-4 text-base leading-7 text-primary-800 sm:text-lg">
+        Cada logro representa un paso adelante en nuestra mision de transformar vidas a traves de la educacion, el acompanamiento y las oportunidades que brindamos a jovenes de areas rurales en Guatemala.
+      </p>
+    </div>
+
+    <div class="grid auto-rows-[minmax(280px,auto)] grid-cols-1 gap-6 md:grid-cols-4">
+
+      {logros.map((logro, index) => {
+        const destacado = [0, 4, 8].includes(index);
+
+        return (
+          <article
+            class={`group overflow-hidden rounded-2xl border border-secondary/60 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg
+            ${
+              destacado
+                ? "md:col-span-2 md:row-span-2"
+                : "md:col-span-2 lg:col-span-1"
+            }`}
+          >
+            {/* Imagen */}
+            <div
+              class={`overflow-hidden bg-primary-100
+              ${
+                destacado
+                  ? "aspect-4/3 md:aspect-auto md:h-80"
+                  : "aspect-4/3"
+              }`}
+            >
               {logro.imagen ? (
                 <img
-                  class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   src={logro.imagen}
                   alt={logro.titulo}
                   loading="lazy"
@@ -106,22 +128,27 @@ const videos = [
               )}
             </div>
 
+            {/* Texto */}
             <div class="p-6">
               <time class="text-sm font-bold uppercase tracking-wide text-primary-600">
                 {logro.fecha}
               </time>
+
               <h3 class="mt-2 font-heading text-xl font-bold text-primary-700">
                 {logro.titulo}
               </h3>
+
               <p class="mt-3 text-sm leading-6 text-primary-800 sm:text-base">
                 {logro.descripcion}
               </p>
             </div>
           </article>
-        ))}
-      </div>
+        );
+      })}
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="bg-secondary-soft">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">

@@ -9,7 +9,7 @@ const programas = [
     descripcion:
       "Este programa tiene como objetivo financiar la educación primaria, nivel básico y carreras de niños y jóvenes en pobreza procedentes del área rural y zonas marginales del área urbana. Apadrinamiento anual por estudiante Q. 2,100.00   Apadrinamiento mensual por estudiante Q. 175.00",
     imagen:
-      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png",
+      "/public/images/apadrinar.jpg",
     cta: "Conocer mas",
   },
   {
@@ -18,7 +18,7 @@ const programas = [
     descripcion:
       "Facilitamos recursos medicos esenciales para comunidades con acceso limitado a servicios de salud. Si deseas ser voluntario en este programa, favor haga clic aquí para dejar sus datos y con gusto nos comunicaremos contigo.  Si desea hablar con nosotros favor llamar al (502) 2435-3794",
     imagen:
-      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png",
+      "/public/images/health.jpg",
     cta: "Donar ahora",
   },
   {
@@ -27,7 +27,7 @@ const programas = [
     descripcion:
       "Queremos desafiarlo a usted, sea parte de nuestro grupo selecto de inversionistas sociales, invirtiendo o ahorrando en nuestra cooperativa desde $10.00 mensuales, con su inversión recibirá un retorno anual muy por encima del mercado financiero y ayudara a financiar cientos de emprendedores del área rural, con  la misión de aliviar la pobreza rural y construir una nación más justa y equitativa. Llama al  (502) 2435-3794   o    info@coopymer.com",
     imagen:
-      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png",
+      "/public/images/inversion.png",
     cta: "Invertir",
   },
   {
@@ -36,7 +36,7 @@ const programas = [
     descripcion:
       "Te invitamos a unirte a nuestro programa de RESCATE por la naturaleza, donando $1.00 por cada árbol sembrado en áreas protegidas en las aldeas rurales.  Haga click para llenar formulario.",
     imagen:
-      "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png",
+      "/public/images/arboles.webp",
     cta: "Participar",
   },
 ];
@@ -54,72 +54,100 @@ const enfoque = [
     Generamos oportunidades reales a traves de educacion, salud y desarrollo sostenible.
   </SectionHero>
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-        <div>
-          <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
-            Areas de impacto
-          </span>
-          <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
-            Programas disenados para transformar comunidades
-          </h2>
+ <section class="animate lift bg-secondary-soft">
+  <div class="mx-auto max-w-7xl px-4 py-14 lg:py-20">
+
+    <div class="animate fade-up mx-auto mb-14 max-w-3xl text-center">
+      <span class="animate pop-strong text-sm font-bold uppercase tracking-[0.25em] text-primary-600">
+        Áreas de impacto
+      </span>
+
+      <h2 class="animate lift mt-3 text-3xl font-extrabold text-primary-700 sm:text-4xl">
+        Programas que transforman vidas
+      </h2>
+
+      <p class="animate fade-up mt-4 text-primary-800 leading-7">
+        Cada programa responde a una necesidad distinta, pero todos trabajan hacia el mismo objetivo: desarrollo sostenible en Guatemala.
+      </p>
+    </div>
+
+    <div class="space-y-10">
+
+      <article class="grid overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5 md:grid-cols-2">
+
+        <div class="h-72 md:h-full overflow-hidden">
+          <img
+            src={programas[0].imagen}
+            class="animate zoom-fade h-full w-full object-cover"
+          />
         </div>
 
-        <p class="text-base leading-7 text-primary-800 sm:text-lg">
-          Cada programa responde a una necesidad concreta y combina recursos, seguimiento y alianzas para lograr cambios sostenibles en la vida de las personas beneficiadas.
-        </p>
-      </div>
-    </div>
-  </section>
+        <div class="p-8 flex flex-col justify-center">
+          <span class="animate zoom-fade text-xs font-bold uppercase tracking-[0.25em] text-primary-500">
+            {programas[0].categoria}
+          </span>
 
-  <section class="bg-secondary-soft">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <div class="grid gap-6 md:grid-cols-2">
-        {programas.map((programa) => (
-          <article class="group overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-            <div class="aspect-16/10 overflow-hidden bg-primary-100">
+          <h3 class="animate zoom-fade mt-2 text-3xl font-bold text-primary-700">
+            {programas[0].titulo}
+          </h3>
+
+          <p class="mt-4 text-primary-800 leading-7">
+            {programas[0].descripcion}
+          </p>
+
+          <a class="animate fade-up mt-6 inline-flex w-fit rounded-lg bg-primary-700 px-5 py-2.5 text-white font-semibold hover:bg-primary-800">
+            {programas[0].cta}
+          </a>
+        </div>
+      </article>
+
+      <div class="grid gap-8 md:grid-cols-2">
+
+        {programas.slice(1).map((programa) => (
+          <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-lg">
+
+            <div class="animate fade-up h-52 overflow-hidden">
               <img
-                class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                 src={programa.imagen}
-                alt={programa.titulo}
-                loading="lazy"
+                class="h-full w-full object-cover transition group-hover:scale-105"
               />
             </div>
 
-            <div class="flex min-h-64 flex-col p-6">
-              <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+            <div class="p-6">
+              <span class="animate fade-up text-xs font-bold uppercase tracking-[0.25em] text-primary-500">
                 {programa.categoria}
               </span>
-              <h3 class="mt-2 font-heading text-2xl font-extrabold text-primary-700">
+
+              <h3 class="animate fade-up mt-2 text-xl font-bold text-primary-700">
                 {programa.titulo}
               </h3>
-              <p class="mt-4 flex-1 leading-7 text-primary-800">
+
+              <p class="animate fade-up mt-3 text-primary-800 leading-7 text-sm">
                 {programa.descripcion}
               </p>
-              <a
-                href="#"
-                class="mt-6 inline-flex w-fit rounded-lg bg-primary-700 px-5 py-2.5 font-semibold text-white transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-200"
-              >
-                {programa.cta}
+
+              <a class="animate fade-up mt-4 inline-flex text-primary-700 font-semibold hover:underline">
+                {programa.cta} →
               </a>
             </div>
           </article>
         ))}
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="bg-white">
+  <section class="animate rotate-in bg-white">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8 lg:py-16">
       <div>
         <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
           Como trabajamos
         </span>
-        <h2 class="mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
+        <h2 class="animate fade-up mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
           Un proceso claro para generar impacto
         </h2>
-        <p class="mt-4 leading-7 text-primary-800">
+        <p class="animate fade-up mt-4 leading-7 text-primary-800">
           Nuestro equipo acompana cada iniciativa desde la identificacion de necesidades hasta el seguimiento de resultados.
         </p>
       </div>
@@ -139,7 +167,7 @@ const enfoque = [
     </div>
   </section>
 
-  <section class="bg-primary-700">
+  <section class="animate zoom-fade bg-primary-700">
     <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
       <h2 class="font-heading text-3xl font-extrabold text-white">
         Construyamos mas oportunidades
