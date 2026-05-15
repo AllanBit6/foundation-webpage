@@ -87,6 +87,16 @@ export const dailyQuotes = [
     quote: "Develop a passion for learning. If you do, you will never cease to grow.",
     author: "Anthony J. D’Angelo",
     source: "The College Blue Book"
+  },
+  {
+    quote: "Only by strict specialization can the scientific worker become fully conscious, for once and perhaps never again in his lifetime, that he has achieved something that will endure.",
+    author: "Max Weber",
+    source: "Science as a Vocation 1917"
+  },
+  {
+    quote:"The possible would never have been achieved if people had not repeatedly reached for the impossible.",
+    author: "Max Weber",
+    source: "Max Weber Speeches compilation"
   }
 ];
 

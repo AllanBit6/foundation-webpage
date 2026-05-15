@@ -55,6 +55,7 @@ body {
   background: #ffffff;
   color: #20203a;
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -272,6 +273,16 @@ a {
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 .delay-500 { transition-delay: 500ms; }
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 
 @media (prefers-reduced-motion: reduce) {
