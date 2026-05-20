@@ -29,9 +29,9 @@ const valores = [
 const equipo = [
   {
     nombre: "Samuel Vásquez",
-    rol: "Fundador",
+    rol: "Fundador de Fundacion Transformando Vidas",
     descripcion:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.",
+      "Nací en una aldea llamada Chuanoj, en el departamento de Totonicapán. Mi historia no comenzó con privilegios, comodidades ni grandes oportunidades. Comenzó en un contexto rural, con muchas limitaciones, pero también con una profunda fe en Dios y con el deseo de salir adelante. A los 11 años caminaba descalzo. Esa imagen nunca se ha borrado de mi memoria, porque me recuerda de dónde vengo, lo que Dios ha hecho en mi vida y por qué hoy tengo el compromiso de ayudar a otros niños y jóvenes que también sueñan con una oportunidad. Con el paso de los años comprendí que la educación puede transformar una vida. Yo mismo soy testimonio de ello. Gracias al esfuerzo, la disciplina, la fe y las oportunidades que Dios puso en mi camino, pude formarme académicamente hasta alcanzar estudios superiores en instituciones nacionales e internacionales. Soy Contador Público y Auditor, graduado con honores por la Universidad de San Carlos de Guatemala; realicé una Maestría en Administración de Empresas con especialidad en Economía Empresarial y Desarrollo Sostenible en INCAE Business School; estudios de alta gerencia en Harvard University Extension School; especialización en Liderazgo e Innovación Estratégica en MIT Sloan School of Management; y maestrías en Liderazgo Organizacional y Derecho Parlamentario y Gobierno, ambas con honores Cum Laude. Actualmente, en el año 2026, estoy culminando mi PhD en Educación e Innovación por la Universidad de Investigación e Innovación de México. Pero mi mayor logro no está en los títulos, sino en entender que todo lo recibido debe convertirse en servicio. Por eso nació Fundación Transformando Vidas: para abrir caminos donde antes había barreras, para llevar esperanza donde muchos solo ven limitaciones y para demostrar que un niño o joven de una comunidad rural también puede llegar lejos si recibe formación, acompañamiento y una oportunidad. Fundación Transformando Vidas existe porque creo firmemente que una vida transformada puede transformar a muchas más. Cada beca, cada voluntario, cada donador y cada alianza estratégica representan puertas abiertas para que más jóvenes puedan estudiar, desarrollar sus talentos, fortalecer su fe, servir a sus comunidades y construir un futuro diferente. Yo fui un niño de aldea que caminó descalzo, pero Dios me permitió avanzar. Hoy mi responsabilidad es extender la mano a otros, para que también descubran que su historia puede cambiar. Transformando Vidas no es solamente el nombre de una fundación. Es una misión de vida: transformar personas para que ellas también transformen familias, comunidades y generaciones.",
     imagen: "/images/fundador.jpeg",
   },
 ];
@@ -185,7 +185,7 @@ const desafios = [
   </section>
 
 <section class="bg-secondary-soft py-16">
-  <div class="mx-auto max-w-5xl px-4">
+  <div class="mx-auto max-w-5xl px-4 lg:max-w-7xl lg:px-6 xl:max-w-8xl">
 
     <div class="mb-12 text-center">
       <h2 class="text-3xl font-extrabold text-primary-700 md:text-4xl">
@@ -201,23 +201,21 @@ const desafios = [
       {equipo.map((persona) => (
         <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-lg">
 
-          <div class="grid md:grid-cols-2">
+          <div class="grid gap-6 lg:grid-cols-[minmax(360px,450px)_1.2fr] lg:gap-8 items-start">
 
-
-            <div class="animate fade-left relative h-64 md:h-full overflow-hidden">
-              <img
-                src={persona.imagen}
-                alt={persona.nombre}
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-
-              <div class="absolute inset-0 bg-linear-to-t from-primary-950/25 via-transparent to-transparent"></div>
+            <div class="animate fade-left overflow-hidden rounded-3xl border border-secondary/10 p-4 transition lg:p-6">
+              <div class="aspect-[3/4] overflow-hidden rounded-3xl">
+                <img
+                  src={persona.imagen}
+                  alt={persona.nombre}
+                  class="h-full w-full object-contain object-center transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
-            <div class="animate pop flex items-center p-6 md:p-8">
+            <div class="animate pop flex flex-col justify-center p-6 md:p-8">
               <div>
-
                 <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-500">
                   {persona.rol}
                 </p>
@@ -228,10 +226,9 @@ const desafios = [
 
                 <div class="mt-3 h-1 w-12 rounded-full bg-primary-300"></div>
 
-                <p class="mt-4 text-base leading-7 text-primary-800">
+                <p class="mt-4 text-base leading-8 text-primary-800">
                   {persona.descripcion}
                 </p>
-
               </div>
             </div>
 
