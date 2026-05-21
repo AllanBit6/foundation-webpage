@@ -6,7 +6,7 @@ const isActive = (path: any) =>
 ---
 
 <header class="fixed top-0 left-0 z-50 w-full">
-  <nav class="border-b border-secondary/60 bg-white/95 px-5 py-4 shadow-sm backdrop-blur lg:px-6">
+  <nav class="border-b border-coral/20 bg-white/95 px-5 py-4 shadow-sm backdrop-blur lg:px-6">
     <div class="mx-auto flex max-w-7xl items-center justify-between">
 
       <!-- Logo -->
@@ -23,8 +23,8 @@ const isActive = (path: any) =>
               href="/"
               class={`transition ${
                 isActive("/")
-                  ? "font-bold text-primary-900"
-                  : "text-primary-700 hover:text-primary-900"
+                  ? "font-bold text-coral"
+                  : "text-primary-700 hover:text-coral"
               }`}
             >
               Inicio
@@ -36,8 +36,8 @@ const isActive = (path: any) =>
               href="/nosotros"
               class={`transition ${
                 isActive("/nosotros")
-                  ? "font-bold text-primary-900"
-                  : "text-primary-700 hover:text-primary-900"
+                  ? "font-bold text-coral"
+                  : "text-primary-700 hover:text-coral"
               }`}
             >
               Nosotros
@@ -49,8 +49,8 @@ const isActive = (path: any) =>
               href="/programas"
               class={`transition ${
                 isActive("/programas")
-                  ? "font-bold text-primary-900"
-                  : "text-primary-700 hover:text-primary-900"
+                  ? "font-bold text-coral"
+                  : "text-primary-700 hover:text-coral"
               }`}
             >
               Programas
@@ -62,8 +62,8 @@ const isActive = (path: any) =>
               href="/logros"
               class={`transition ${
                 isActive("/logros")
-                  ? "font-bold text-primary-900"
-                  : "text-primary-700 hover:text-primary-900"
+                  ? "font-bold text-coral"
+                  : "text-primary-700 hover:text-coral"
               }`}
             >
               Logros
@@ -75,8 +75,8 @@ const isActive = (path: any) =>
               href="/carreras"
               class={`transition ${
                 isActive("/carreras")
-                  ? "font-bold text-primary-900"
-                  : "text-primary-700 hover:text-primary-900"
+                  ? "font-bold text-coral"
+                  : "text-primary-700 hover:text-coral"
               }`}
             >
               Carreras
@@ -93,8 +93,8 @@ const isActive = (path: any) =>
           href="/aplicacion"
           class={`rounded-lg px-4 py-2 text-sm font-semibold shadow-sm transition ${
             isActive("/aplicacion")
-              ? "bg-primary-800 text-white"
-              : "bg-primary-700 text-white hover:bg-primary-800"
+              ? "bg-coral text-white"
+              : "bg-coral text-white hover:bg-coral-muted"
           }`}
         >
           Aplicar a una beca
@@ -104,8 +104,8 @@ const isActive = (path: any) =>
           href="/tourism-with-purpose"
           class={`rounded-lg px-4 py-2 text-sm font-semibold shadow-sm transition ${
             isActive("/tourism-with-purpose")
-              ? "bg-amber-500 text-white"
-              : "bg-amber-400 text-primary-900 hover:bg-amber-500"
+              ? "bg-sun text-primary-950"
+              : "bg-sun text-primary-950 hover:bg-coral hover:text-white"
           }`}
         >
         Tourism with Purpose
@@ -115,8 +115,8 @@ const isActive = (path: any) =>
           href="/involucrate"
           class={`rounded-lg border px-4 py-2 text-sm font-semibold transition ${
             isActive("/involucrate")
-              ? "border-primary-400 bg-primary-100 text-primary-900"
-              : "border-primary-300 bg-secondary-soft text-primary-800 hover:bg-primary-100"
+              ? "border-teal bg-teal-soft text-primary-900"
+              : "border-teal/30 bg-teal-soft text-primary-800 hover:border-teal hover:bg-white"
           }`}
         >
           Quiero apoyar
@@ -126,7 +126,7 @@ const isActive = (path: any) =>
       <!-- Mobile Menu Button -->
       <button
         id="menu-btn"
-        class="ml-1 inline-flex items-center rounded-lg p-2 text-primary-700 hover:bg-primary-50 lg:hidden"
+        class="ml-1 inline-flex items-center rounded-lg p-2 text-primary-700 hover:bg-coral-soft hover:text-coral lg:hidden"
         aria-label="Abrir menu"
       >
         <span class="text-2xl leading-none">&#9776;</span>
@@ -143,31 +143,31 @@ const isActive = (path: any) =>
   <ul class="mx-auto flex max-w-md flex-col gap-8 px-6 py-6 text-lg font-semibold text-primary-800">
 
     <li>
-      <a href="/" class={isActive("/") ? "font-bold text-primary-900" : ""}>
+      <a href="/" class={isActive("/") ? "font-bold text-coral" : ""}>
         Inicio
       </a>
     </li>
 
     <li>
-      <a href="/nosotros" class={isActive("/nosotros") ? "font-bold text-primary-900" : ""}>
+      <a href="/nosotros" class={isActive("/nosotros") ? "font-bold text-coral" : ""}>
         Nosotros
       </a>
     </li>
 
     <li>
-      <a href="/programas" class={isActive("/programas") ? "font-bold text-primary-900" : ""}>
+      <a href="/programas" class={isActive("/programas") ? "font-bold text-coral" : ""}>
         Programas
       </a>
     </li>
 
     <li>
-      <a href="/logros" class={isActive("/logros") ? "font-bold text-primary-900" : ""}>
+      <a href="/logros" class={isActive("/logros") ? "font-bold text-coral" : ""}>
         Logros
       </a>
     </li>
 
     <li>
-      <a href="/carreras" class={isActive("/carreras") ? "font-bold text-primary-900" : ""}>
+      <a href="/carreras" class={isActive("/carreras") ? "font-bold text-coral" : ""}>
         Carreras
       </a>
     </li>
@@ -177,7 +177,7 @@ const isActive = (path: any) =>
     <li>
       <a
         href="/aplicacion"
-        class="block rounded-lg bg-primary-700 px-4 py-3 text-center text-base text-white shadow-sm"
+        class="block rounded-lg bg-coral px-4 py-3 text-center text-base text-white shadow-sm"
       >
         Aplicar a una beca
       </a>
@@ -186,7 +186,7 @@ const isActive = (path: any) =>
     <li>
       <a
         href="/tourism-with-purpose"
-        class="block rounded-lg bg-amber-400 px-4 py-3 text-center text-base font-bold text-primary-900 shadow-sm"
+        class="block rounded-lg bg-sun px-4 py-3 text-center text-base font-bold text-primary-950 shadow-sm"
       >
       Tourism with Purpose
       </a>
@@ -195,7 +195,7 @@ const isActive = (path: any) =>
     <li>
       <a
         href="/involucrate"
-        class="block rounded-lg border border-primary-300 px-4 py-3 text-center text-base"
+        class="block rounded-lg border border-teal/30 bg-teal-soft px-4 py-3 text-center text-base"
       >
         Quiero apoyar
       </a>

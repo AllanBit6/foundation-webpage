@@ -19,6 +19,13 @@ module.exports = {
         },
         secondary: "#c5c6e1",
         "secondary-soft": "#f3f3fa",
+        coral: "#f34b57",
+        "coral-soft": "#fff1f2",
+        "coral-muted": "#f8717a",
+        teal: "#22a699",
+        "teal-soft": "#e8f7f4",
+        sun: "#f6c453",
+        "sun-soft": "#fff7df",
       },
       keyframes:{
         

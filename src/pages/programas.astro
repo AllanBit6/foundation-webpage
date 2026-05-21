@@ -58,7 +58,7 @@ const enfoque = [
   <div class="mx-auto max-w-7xl px-4 py-14 lg:py-20">
 
     <div class="animate fade-up mx-auto mb-14 max-w-3xl text-center">
-      <span class="animate pop-strong text-sm font-bold uppercase tracking-[0.25em] text-primary-600">
+      <span class="animate pop-strong rounded-full bg-coral px-4 py-2 text-sm font-bold uppercase tracking-[0.25em] text-white">
         Áreas de impacto
       </span>
 
@@ -83,7 +83,7 @@ const enfoque = [
         </div>
 
         <div class="p-8 flex flex-col justify-center">
-          <span class="animate zoom-fade text-xs font-bold uppercase tracking-[0.25em] text-primary-500">
+          <span class="animate zoom-fade w-fit rounded-full bg-coral-soft px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] text-coral">
             {programas[0].categoria}
           </span>
 
@@ -95,7 +95,7 @@ const enfoque = [
             {programas[0].descripcion}
           </p>
 
-          <a href="/involucrate" class="animate fade-up mt-6 inline-flex w-fit rounded-lg bg-primary-700 px-5 py-2.5 text-white font-semibold hover:bg-primary-800">
+          <a href="/involucrate" class="animate fade-up mt-6 inline-flex w-fit rounded-lg bg-coral px-5 py-2.5 text-white font-semibold shadow-sm shadow-coral/20 hover:bg-coral-muted">
             {programas[0].cta}
           </a>
         </div>
@@ -114,7 +114,7 @@ const enfoque = [
             </div>
 
             <div class="p-6">
-              <span class="animate fade-up text-xs font-bold uppercase tracking-[0.25em] text-primary-500">
+              <span class="animate fade-up w-fit rounded-full bg-coral-soft px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] text-coral">
                 {programa.categoria}
               </span>
 
@@ -126,7 +126,7 @@ const enfoque = [
                 {programa.descripcion}
               </p>
 
-              <a href="/involucrate" class="animate fade-up mt-4 inline-flex text-primary-700 font-semibold hover:underline">
+              <a href="/involucrate" class="animate fade-up mt-4 inline-flex rounded-lg bg-coral px-4 py-2 text-sm font-semibold text-white hover:bg-coral-muted">
                 {programa.cta} →
               </a>
             </div>
@@ -141,7 +141,7 @@ const enfoque = [
   <section class=" bg-white">
     <div class="animate lift mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8 lg:py-16">
       <div>
-        <span class="text-sm font-bold uppercase tracking-wide text-primary-600">
+        <span class="text-sm font-bold uppercase tracking-wide text-coral">
           Como trabajamos
         </span>
         <h2 class="animate fade-up mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
@@ -154,8 +154,8 @@ const enfoque = [
 
       <div class="grid gap-4 sm:grid-cols-2">
         {enfoque.map((item, index) => (
-          <div class="rounded-lg border border-secondary/60 bg-secondary-soft p-6">
-            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-700 text-sm font-extrabold text-white">
+          <div class="rounded-lg border border-coral/20 bg-coral-soft p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-coral text-sm font-extrabold text-white">
               {index + 1}
             </div>
             <h3 class="font-heading text-lg font-bold text-primary-700">
@@ -167,7 +167,7 @@ const enfoque = [
     </div>
   </section>
 
-  <section class="animate pop bg-primary-700">
+  <section class="animate pop bg-coral">
     <div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8">
       <h2 class="font-heading text-3xl font-extrabold text-white">
         Construyamos mas oportunidades
@@ -177,7 +177,7 @@ const enfoque = [
       </p>
       <a
         href="#"
-        class="mt-6 inline-flex rounded-lg bg-white px-6 py-3 font-semibold text-primary-700 transition hover:bg-primary-50 focus:outline-none focus:ring-4 focus:ring-primary-300"
+        class="mt-6 inline-flex rounded-lg bg-white px-6 py-3 font-semibold text-coral transition hover:bg-coral-soft focus:outline-none focus:ring-4 focus:ring-white/40"
       >
         Súmate al programa
       </a>

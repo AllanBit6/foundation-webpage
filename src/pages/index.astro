@@ -4,6 +4,92 @@ import GuatemalaMap from "../components/GuatemalaMap.astro";
 import { getDailyQuote } from "../scripts/dailyQuotes";
 const dailyQuote = getDailyQuote();
 
+const testimonios = [
+  {
+    nombre: "Arellys Cuá",
+    rol: "Becada",
+    color: "coral",
+    imagen: "/images/testimonio2.jpeg",
+    resumen:
+      "Soy originaria de San Cristóbal Totonicapán y gracias a la beca de Fundación Transformando Vidas pude estudiar Perito Contador Bilingüe. Este apoyo me ayudó a fortalecer mis estudios, desarrollar mis capacidades y avanzar con disciplina y gratitud.",
+    historia:
+      "Mi nombre es Arellys Betzabé Cua, soy originaria de San Cristóbal Totonicapán, tuve la oportunidad de estudiar la carrera de Perito Contador Bilingüe en el Instituto Tecnológico Tec Zión, gracias a las becas que ofrece la Fundación Transformando Vidas. Me considero una persona optimista, perseverante y comprometida, alguien que procura dar la milla extra en cada etapa de su vida. Esa actitud me ha permitido avanzar con disciplina, responsabilidad y gratitud, reconociendo que cada oportunidad debe aprovecharse con excelencia. La beca recibida a través de Fundación Transformando Vidas fue una oportunidad muy valiosa en mi formación. Gracias a este apoyo pude fortalecer mis estudios, desarrollar mis capacidades y prepararme para continuar creciendo académica y profesionalmente. Actualmente estudio en la Universidad Rafael Landívar, en la carrera de Contador Público y Auditor, lo cual representa para mí un gran honor y una gran responsabilidad. Agradezco profundamente a Fundación Transformando Vidas por la labor que realiza al apoyar a jóvenes que desean continuar sus estudios y cumplir sus sueños. Gracias por creer en los jóvenes. Gracias por apoyar la educación. Gracias por transformar vidas.",
+  },
+  {
+    nombre: "Juan Cop",
+    rol: "Becado",
+    color: "teal",
+    imagen: "/images/testimonio1.jpg",
+    resumen:
+      "Al principio no creía que el estudio fuera para mí, pero con disciplina y el apoyo de la fundación pude graduarme como Bachiller en Ciencias Biológicas. Hoy sigo avanzando con más confianza y esperanza.",
+    historia:
+      "Mi nombre es Juan Cop. Nací el 22 de agosto de 2006 y desde niño he tenido una profunda pasión por la ciencia, el arte y la fe en Dios. Crecí con sueños grandes, pero también con desafíos que muchas veces parecían más grandes que mis propias fuerzas. No inicié mi vida académica como un estudiante destacado. Al principio, incluso llegué a pensar que el estudio no era para mí. Sin embargo, con el tiempo comprendí que el esfuerzo, la disciplina, la perseverancia y una actitud correcta podían transformar mi historia. Gracias a la beca recibida, pude continuar mis estudios, fortalecer mis capacidades y acercarme cada vez más a uno de mis mayores sueños: convertirme en médico. Hoy sigo avanzando, con gratitud, disciplina y fe, hacia la meta de convertirme en un profesional que sirva a Dios, a mi comunidad y a Guatemala.",
+  },
+  {
+    nombre: "Jonathan Aguilar",
+    rol: "Becado",
+    color: "sun",
+    imagen: "/images/testimonio3.jpg",
+    resumen:
+      "Desde Nebaj llegué a Tec Zión con una beca de Transformando Vidas, y hoy sigo avanzando en la Universidad Francisco Marroquín. Ese apoyo me ayudó a combinar estudios, liderazgo y servicio con más seguridad y propósito.",
+    historia:
+      "Mi nombre es Jonatan Josué Aguilar Ramírez. Nací el 5 de enero de 2005 en Nebaj, Quiché, Guatemala, en un entorno familiar marcado por el trabajo, el comercio y la responsabilidad. Desde muy pequeño aprendí que cada logro requiere esfuerzo, disciplina y compromiso. Llegar a Tec Zión representó una decisión importante para mí y para mi familia. Gracias a mi desempeño académico y personal, recibí una beca de la Fundación Transformando Vidas, apoyo que fue clave para seguir adelante con mis estudios. Hoy soy estudiante de tercer año de la Licenciatura en Computer Science en la Universidad Francisco Marroquín. La beca no fue solamente un apoyo económico; fue una oportunidad que fortaleció mi camino, abrió nuevas posibilidades y me impulsó a creer que los sueños pueden alcanzarse cuando se combinan esfuerzo, excelencia y acompañamiento.",
+  },
+  {
+    nombre: "Allan Lacán",
+    rol: "Becado",
+    color: "primary",
+    imagen: "/images/testimonio4.jfif",
+    resumen:
+      "Gracias a la beca pude estudiar Electrónica y Dispositivos Digitales y llegar a ser primer lugar de mi promoción. Hoy quiero usar ese conocimiento para ayudar a mi comunidad.",
+    historia:
+      "Mi nombre es Allan Daniel Lacán Vásquez, originario de la cabecera de Totonicapán. Gracias al apoyo de Fundación Transformando Vidas y al acceso a una beca completa, tuve la oportunidad de estudiar la carrera de Perito en Electrónica y Dispositivos Digitales, graduándome como primer lugar de mi promoción. Durante mi formación, desarrollé habilidades técnicas y de liderazgo que me permitieron vivir experiencias importantes, como participar en la Olimpiada Nacional de Ciencias 2023 en el área de Física Diversificado, donde obtuve el cuarto lugar a nivel nacional. Mi mayor deseo es acercar la educación tecnológica a más personas y hacer que la tecnología sea una herramienta accesible para transformar vidas.",
+  },
+];
+
+const coloresTestimonio = {
+  coral: {
+    card: "border-coral/50 bg-coral text-white hover:bg-coral-muted",
+    title: "text-white",
+    summary: "text-white/90",
+    details: "bg-coral/80",
+    summaryButton: "border-white/20 bg-white/10 text-white hover:bg-white/20",
+    overlay: "bg-coral/95",
+    chip: "bg-white/15 text-white",
+    action: "text-white/80",
+  },
+  teal: {
+    card: "border-teal/50 bg-teal text-white hover:bg-teal/90",
+    title: "text-white",
+    summary: "text-white/90",
+    details: "bg-teal/80",
+    summaryButton: "border-white/20 bg-white/10 text-white hover:bg-white/20",
+    overlay: "bg-teal/95",
+    chip: "bg-white/15 text-white",
+    action: "text-white/80",
+  },
+  sun: {
+    card: "border-sun/60 bg-sun text-primary-950 hover:bg-sun/85",
+    title: "text-primary-950",
+    summary: "text-primary-900",
+    details: "bg-white/35",
+    summaryButton: "border-primary-950/15 bg-white/35 text-primary-950 hover:bg-white/50",
+    overlay: "bg-sun/95",
+    chip: "bg-primary-950/10 text-primary-950",
+    action: "text-primary-800",
+  },
+  primary: {
+    card: "border-primary-600 bg-primary-800/90 text-white hover:bg-primary-900/95",
+    title: "text-white",
+    summary: "text-primary-100",
+    details: "bg-primary-900/80",
+    summaryButton: "border-white/20 bg-white/10 text-white hover:bg-white/20",
+    overlay: "bg-primary-950/80",
+    chip: "bg-white/10 text-white/80",
+    action: "text-secondary",
+  },
+};
+
 ---
 
 <Layout>
@@ -54,7 +140,7 @@ const dailyQuote = getDailyQuote();
 
         <a
           href="/aplicacion"
-          class="rounded-lg bg-white px-7 py-3 font-semibold text-primary-800 shadow-lg transition hover:scale-105 hover:bg-primary-50"
+          class="rounded-lg bg-coral px-7 py-3 font-semibold text-white shadow-lg shadow-coral/25 transition hover:scale-105 hover:bg-coral-muted"
         >
           Aplicar a beca
         </a>
@@ -69,9 +155,9 @@ const dailyQuote = getDailyQuote();
       </div>
 
       <!-- Stats -->
-      <div class=" mt-12 grid grid-cols-3 gap-8 border-t border-white/20 pt-8">
+      <div class=" mt-12 grid grid-cols-3 gap-4 border-t border-white/20 pt-8 sm:gap-8">
 
-        <div>
+        <div class="rounded-2xl bg-coral/90 px-3 py-4 shadow-lg shadow-coral/20 backdrop-blur">
           <p class="text-3xl font-extrabold text-white">
             +<span class="stat" data-target="6000">0</span>
           </p>
@@ -80,7 +166,7 @@ const dailyQuote = getDailyQuote();
           </p>
         </div>
 
-        <div>
+        <div class="rounded-2xl bg-teal/85 px-3 py-4 shadow-lg shadow-teal/20 backdrop-blur">
           <p class="text-3xl font-extrabold text-white">
             +<span class="stat" data-target="5">0</span>
           </p>
@@ -89,11 +175,11 @@ const dailyQuote = getDailyQuote();
           </p>
         </div>
 
-        <div>
-          <p class="text-3xl font-extrabold text-white">
+        <div class="rounded-2xl bg-sun/90 px-3 py-4 text-primary-950 shadow-lg shadow-sun/20 backdrop-blur">
+          <p class="text-3xl font-extrabold text-primary-950">
             +<span class="stat" data-target="20">0</span>
           </p>
-          <p class="text-sm text-white/70">
+          <p class="text-sm text-primary-900">
             Años de impacto
           </p>
         </div>
@@ -133,7 +219,7 @@ const dailyQuote = getDailyQuote();
       >
         <div class="space-y-3">
           <div
-            class="animate pop-strong delay-500 mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700"
+            class="animate pop-strong delay-500 mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-coral"
           >
             <svg
               class="h-8 w-8"
@@ -155,7 +241,7 @@ const dailyQuote = getDailyQuote();
 
         <div class="space-y-3">
           <div
-            class="animate pop-strong delay-500  mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700"
+            class="animate pop-strong delay-500  mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-teal"
           >
             <svg
               class="h-8 w-8"
@@ -175,7 +261,7 @@ const dailyQuote = getDailyQuote();
 
         <div class="space-y-3">
           <div
-            class="animate pop-strong delay-500 mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-700"
+            class="animate pop-strong delay-500 mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-sun"
           >
             <svg
               class="h-8 w-8"
@@ -197,7 +283,7 @@ const dailyQuote = getDailyQuote();
       <div class="mt-10 text-center">
         <a
           href="/aplicacion"
-          class="rounded-lg bg-primary-700 px-8 py-3 font-semibold text-white shadow-sm hover:bg-primary-800"
+          class="rounded-lg bg-coral px-8 py-3 font-semibold text-white shadow-sm hover:bg-coral-muted"
         >
           Iniciar aplicación
         </a>
@@ -211,244 +297,67 @@ const dailyQuote = getDailyQuote();
         Historias que inspiran
       </h2>
       <div class="animate fade-in delay-500 grid gap-8 md:grid-cols-3">
+        {testimonios.map((testimonio) => {
+          const color = coloresTestimonio[testimonio.color] ?? coloresTestimonio.primary;
 
-        <article class="group relative overflow-hidden rounded-3xl border border-primary-600 bg-primary-800/90 text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-primary-900/95 hover:shadow-2xl">
-          <img
-            class="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
-            src="/images/testimonio2.jpeg"
-            alt="Arellys Cuá"
-            loading="lazy"
-          />
-          <div class="relative p-6">
-            <div class="mb-5 max-h-40 overflow-hidden text-primary-100 text-xs leading-snug">
-              "Soy originaria de San Cristóbal Totonicapán y gracias a la beca de Fundación Transformando Vidas pude estudiar Perito Contador Bilingüe.
-              Este apoyo me ayudó a fortalecer mis estudios, desarrollar mis capacidades y avanzar con disciplina y gratitud."
-            </div>
-            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <h3 class="font-bold text-white">Arellys Cuá (Becada)</h3>
-              <span class="hidden rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/80 transition group-hover:bg-white/20 md:inline">
-                Pasa el cursor para leer todo
-              </span>
-            </div>
+          return (
+          <article class={`group relative overflow-hidden rounded-3xl border shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl ${color.card}`}>
+            <img
+              class="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
+              src={testimonio.imagen}
+              alt={testimonio.nombre}
+              loading="lazy"
+            />
 
-            <details class="mt-4 rounded-2xl bg-primary-900/80 p-4 text-sm md:hidden">
-              <summary class="inline-flex w-full cursor-pointer items-center justify-between rounded-full border border-white/20 bg-white/10 px-4 py-3 font-semibold text-white transition hover:bg-white/20">
-                Leer historia completa
-              </summary>
-              <p class="mt-3 leading-relaxed text-primary-100">
-                "Mi nombre es Arelys Betzabé Cua, soy originaria de San Cristóbal Totonicapán, tuve la oportunidad de estudiar la carrera de Perito Contador Bilingüe en el Instituto Tecnológico Tec Zión, gracias a las becas que ofrece la Fundación Transformando Vidas.
-                Me considero una persona optimista, perseverante y comprometida, alguien que procura dar la milla extra en cada etapa de su vida. Esa actitud me ha permitido avanzar con disciplina, responsabilidad y gratitud, reconociendo que cada oportunidad debe aprovecharse con excelencia.
-                La beca recibida a través de Fundación Transformando Vidas fue una oportunidad muy valiosa en mi formación. Gracias a este apoyo pude fortalecer mis estudios, desarrollar mis capacidades y prepararme para continuar creciendo académica y profesionalmente.
-                Actualmente estudio en la Universidad Rafael Landívar, en la carrera de Contador Público y Auditor, lo cual representa para mí un gran honor y una gran responsabilidad. Esta nueva etapa universitaria es también fruto de las bases que pude construir durante mi formación en Tec Zión, donde aprendí a esforzarme, a creer en mis metas y a seguir adelante con perseverancia.
-                Agradezco profundamente a Fundación Transformando Vidas por la labor que realiza al apoyar a jóvenes que desean continuar sus estudios y cumplir sus sueños. Su ayuda no solo impulsa la educación; también despierta esperanza, fortalece la confianza y abre caminos para que más jóvenes puedan construir un mejor futuro.
-                Gracias por creer en los jóvenes. Gracias por apoyar la educación. Gracias por transformar vidas.
-"
-              </p>
-            </details>
-          </div>
-
-          <div class="absolute inset-0 hidden rounded-3xl bg-primary-950/80 p-6 opacity-0 transition duration-300 group-hover:block group-hover:opacity-100 md:block">
-            <div class="flex h-full flex-col justify-between">
-              <div class="overflow-y-auto pr-1 text-sm leading-relaxed text-primary-100">
-                "Mi nombre es Arellys Betzabé Cua, soy originaria de San Cristóbal Totonicapán, tuve la oportunidad de estudiar la carrera de Perito Contador Bilingüe en el Instituto Tecnológico Tec Zión, gracias a las becas que ofrece la Fundación Transformando Vidas.
-                Me considero una persona optimista, perseverante y comprometida, alguien que procura dar la milla extra en cada etapa de su vida. Esa actitud me ha permitido avanzar con disciplina, responsabilidad y gratitud, reconociendo que cada oportunidad debe aprovecharse con excelencia.
-                La beca recibida a través de Fundación Transformando Vidas fue una oportunidad muy valiosa en mi formación. Gracias a este apoyo pude fortalecer mis estudios, desarrollar mis capacidades y prepararme para continuar creciendo académica y profesionalmente.
-                Actualmente estudio en la Universidad Rafael Landívar, en la carrera de Contador Público y Auditor, lo cual representa para mí un gran honor y una gran responsabilidad. Esta nueva etapa universitaria es también fruto de las bases que pude construir durante mi formación en Tec Zión, donde aprendí a esforzarme, a creer en mis metas y a seguir adelante con perseverancia.
-                Agradezco profundamente a Fundación Transformando Vidas por la labor que realiza al apoyar a jóvenes que desean continuar sus estudios y cumplir sus sueños. Su ayuda no solo impulsa la educación; también despierta esperanza, fortalece la confianza y abre caminos para que más jóvenes puedan construir un mejor futuro.
-                Gracias por creer en los jóvenes. Gracias por apoyar la educación. Gracias por transformar vidas."
+            <div class="relative p-6">
+              <div class={`mb-5 max-h-40 overflow-hidden text-xs leading-snug ${color.summary}`}>
+                "{testimonio.resumen}"
               </div>
-              <p class="mt-6 text-right text-xs uppercase tracking-[0.24em] text-secondary">
-                Desliza o haz hover para cerrar
-              </p>
-            </div>
-          </div>
-        </article>
-        
-        <article class="group relative overflow-hidden rounded-3xl border border-primary-600 bg-primary-800/90 text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-primary-900/95 hover:shadow-2xl">
-          <img
-            class="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
-            src="/images/testimonio1.jpg"
-            alt="Juan Cop"
-            loading="lazy"
-          />
-          <div class="relative p-6">
-            <div class="mb-5 max-h-40 overflow-hidden text-primary-100 text-xs leading-snug">
-              "Al principio no creía que el estudio fuera para mí, pero con disciplina y el apoyo de la fundación pude graduarme como Bachiller en Ciencias Biológicas.
-              Hoy sigo avanzando con más confianza y esperanza."
-            </div>
-            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <h3 class="font-bold text-white">Juan Cop (Becado)</h3>
-              <span class="hidden rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/80 transition group-hover:bg-white/20 md:inline">
-                Pasa el cursor para leer todo
-              </span>
-            </div>
 
-            <details class="mt-4 rounded-2xl bg-primary-900/80 p-4 text-sm md:hidden">
-              <summary class="inline-flex w-full cursor-pointer items-center justify-between rounded-full border border-white/20 bg-white/10 px-4 py-3 font-semibold text-white transition hover:bg-white/20">
-                Leer historia completa
-              </summary>
-              <p class="mt-3 leading-relaxed text-primary-100">
-                "Mi nombre es Juan Cop. Nací el 22 de agosto de 2006 y desde niño he tenido una profunda pasión por la ciencia, el arte y la fe en Dios. Crecí con sueños grandes, pero también con desafíos que muchas veces parecían más grandes que mis propias fuerzas.
-                No inicié mi vida académica como un estudiante destacado. Al principio, incluso llegué a pensar que el estudio no era para mí. Sin embargo, con el tiempo comprendí que el esfuerzo, la disciplina, la perseverancia y una actitud correcta podían transformar mi historia. Poco a poco, empecé a creer que sí era posible superarme, avanzar y construir un futuro diferente.
-                Mi camino educativo comenzó en comunidades rurales de Totonicapán. Estudié la primaria en escuelas oficiales rurales, luego continué el nivel básico en el Instituto Básico por Cooperativa Xantún, y posteriormente tuve la oportunidad de estudiar la carrera de Ciencias Biológicas en el Instituto Tecnológico Intercontinental Sion —Tec Zión—, gracias al apoyo de Transforming Lives Foundation.
-                Ese apoyo marcó un antes y un después en mi vida.
-                Gracias a la beca recibida, pude continuar mis estudios, fortalecer mis capacidades y acercarme cada vez más a uno de mis mayores sueños: convertirme en médico. Hoy, por la gracia de Dios y con mucho esfuerzo, estudio la carrera de Médico y Cirujano en la Universidad de San Carlos de Guatemala, Centro Universitario de Occidente, donde actualmente continúo preparándome para servir a mi país.
-                A lo largo de mi formación he tenido la bendición de obtener distintos reconocimientos académicos. Fui cuadro de honor en primaria y básico, egresé del nivel primario como abanderado, obtuve medallas en la Olimpiada Nacional de Ciencias en las áreas de Biología y Química, fui reconocido entre los mejores estudiantes de Química a nivel nacional y ocupé el primer puesto de mi promoción en la carrera de Ciencias Biológicas. También he sido reconocido como uno de los mejores estudiantes en la carrera de Médico y Cirujano y he tenido la oportunidad de servir como voluntario en el Puesto de Salud del Cantón Xantún, Totonicapán.
-                Pero más allá de los reconocimientos, lo más importante para mí ha sido descubrir que una oportunidad puede cambiar una vida.
-                El apoyo que recibí no solo me ayudó económicamente; también me recordó que alguien creyó en mí cuando todavía estaba construyendo mi camino. Esa confianza me impulsó a esforzarme más, a no rendirme y a entender que mi preparación no es solo para beneficio personal, sino para ponerla al servicio de otras personas.
-                Hoy sueño con convertirme en un médico capaz de ayudar a quienes más lo necesitan. También deseo que, en el futuro, yo pueda apoyar a otros jóvenes que, como yo, tienen talento, sueños y deseos de superación, pero necesitan una oportunidad para continuar estudiando.
-                Yo soy testimonio de que cuando alguien decide apoyar, una historia puede cambiar.
-                Transforming Lives Foundation no solo me ayudó a estudiar; me ayudó a creer que mi sueño era posible. Y hoy sigo avanzando, con gratitud, disciplina y fe, hacia la meta de convertirme en un profesional que sirva a Dios, a mi comunidad y a Guatemala.
-"
-              </p>
-            </details>
-          </div>
-
-          <div class="absolute inset-0 hidden rounded-3xl bg-primary-950/80 p-6 opacity-0 transition duration-300 group-hover:block group-hover:opacity-100 md:block">
-            <div class="flex h-full flex-col justify-between">
-              <div class="overflow-y-auto pr-1 text-sm leading-relaxed text-primary-100">
-                "Mi nombre es Juan Cop. Nací el 22 de agosto de 2006 y desde niño he tenido una profunda pasión por la ciencia, el arte y la fe en Dios. Crecí con sueños grandes, pero también con desafíos que muchas veces parecían más grandes que mis propias fuerzas.
-                No inicié mi vida académica como un estudiante destacado. Al principio, incluso llegué a pensar que el estudio no era para mí. Sin embargo, con el tiempo comprendí que el esfuerzo, la disciplina, la perseverancia y una actitud correcta podían transformar mi historia. Poco a poco, empecé a creer que sí era posible superarme, avanzar y construir un futuro diferente.
-                Mi camino educativo comenzó en comunidades rurales de Totonicapán. Estudié la primaria en escuelas oficiales rurales, luego continué el nivel básico en el Instituto Básico por Cooperativa Xantún, y posteriormente tuve la oportunidad de estudiar la carrera de Ciencias Biológicas en el Instituto Tecnológico Intercontinental Sion —Tec Zión—, gracias al apoyo de Transforming Lives Foundation.
-                Ese apoyo marcó un antes y un después en mi vida.
-                Gracias a la beca recibida, pude continuar mis estudios, fortalecer mis capacidades y acercarme cada vez más a uno de mis mayores sueños: convertirme en médico. Hoy, por la gracia de Dios y con mucho esfuerzo, estudio la carrera de Médico y Cirujano en la Universidad de San Carlos de Guatemala, Centro Universitario de Occidente, donde actualmente continúo preparándome para servir a mi país.
-                A lo largo de mi formación he tenido la bendición de obtener distintos reconocimientos académicos. Fui cuadro de honor en primaria y básico, egresé del nivel primario como abanderado, obtuve medallas en la Olimpiada Nacional de Ciencias en las áreas de Biología y Química, fui reconocido entre los mejores estudiantes de Química a nivel nacional y ocupé el primer puesto de mi promoción en la carrera de Ciencias Biológicas. También he sido reconocido como uno de los mejores estudiantes en la carrera de Médico y Cirujano y he tenido la oportunidad de servir como voluntario en el Puesto de Salud del Cantón Xantún, Totonicapán.
-                Pero más allá de los reconocimientos, lo más importante para mí ha sido descubrir que una oportunidad puede cambiar una vida.
-                El apoyo que recibí no solo me ayudó económicamente; también me recordó que alguien creyó en mí cuando todavía estaba construyendo mi camino. Esa confianza me impulsó a esforzarme más, a no rendirme y a entender que mi preparación no es solo para beneficio personal, sino para ponerla al servicio de otras personas.
-                Hoy sueño con convertirme en un médico capaz de ayudar a quienes más lo necesitan. También deseo que, en el futuro, yo pueda apoyar a otros jóvenes que, como yo, tienen talento, sueños y deseos de superación, pero necesitan una oportunidad para continuar estudiando.
-                Yo soy testimonio de que cuando alguien decide apoyar, una historia puede cambiar.
-                Transforming Lives Foundation no solo me ayudó a estudiar; me ayudó a creer que mi sueño era posible. Y hoy sigo avanzando, con gratitud, disciplina y fe, hacia la meta de convertirme en un profesional que sirva a Dios, a mi comunidad y a Guatemala.
-"
+              <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <h3 class={`font-bold ${color.title}`}>
+                  {testimonio.nombre} ({testimonio.rol})
+                </h3>
+                <span class={`hidden rounded-full px-3 py-1 text-xs font-semibold transition group-hover:bg-white/20 md:inline ${color.chip}`}>
+                  Pasa el cursor para leer todo
+                </span>
               </div>
-              <p class="mt-6 text-right text-xs uppercase tracking-[0.24em] text-secondary">
-                Desliza o haz hover para cerrar
-              </p>
-            </div>
-          </div>
-        </article>
-        
-        <article class="group relative overflow-hidden rounded-3xl border border-primary-600 bg-primary-800/90 text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-primary-900/95 hover:shadow-2xl">
-          <img
-            class="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
-            src="/images/testimonio3.jpg"
-            alt="Jonathan Aguilar"
-            loading="lazy"
-          />
-          <div class="relative p-6">
-            <div class="mb-5 max-h-40 overflow-hidden text-primary-100 text-xs leading-snug">
-              "Desde Nebaj llegué a Tec Zión con una beca de Transformando Vidas, y hoy sigo avanzando en la Universidad Francisco Marroquín.
-              Ese apoyo me ayudó a combinar estudios, liderazgo y servicio con más seguridad y propósito."
-            </div>
-            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <h3 class="font-bold text-white">Jonathan Aguilar (Becado)</h3>
-              <span class="hidden rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/80 transition group-hover:bg-white/20 md:inline">
-                Pasa el cursor para leer todo
-              </span>
+
+              <details class={`mt-4 rounded-2xl p-4 text-sm md:hidden ${color.details}`}>
+                <summary class={`inline-flex w-full cursor-pointer items-center justify-between rounded-full border px-4 py-3 font-semibold transition ${color.summaryButton}`}>
+                  Leer historia completa
+                </summary>
+                <p class={`mt-3 leading-relaxed ${color.summary}`}>
+                  "{testimonio.historia}"
+                </p>
+              </details>
             </div>
 
-            <details class="mt-4 rounded-2xl bg-primary-900/80 p-4 text-sm md:hidden">
-              <summary class="inline-flex w-full cursor-pointer items-center justify-between rounded-full border border-white/20 bg-white/10 px-4 py-3 font-semibold text-white transition hover:bg-white/20">
-                Leer historia completa
-              </summary>
-              <p class="mt-3 leading-relaxed text-primary-100">
-                "Mi nombre es Jonatan Josué Aguilar Ramírez. Nací el 5 de enero de 2005 en Nebaj, Quiché, Guatemala, en un entorno familiar marcado por el trabajo, el comercio y la responsabilidad. Desde muy pequeño aprendí que cada logro requiere esfuerzo, disciplina y compromiso.
-                Siempre me he considerado una persona curiosa, apasionada por aprender y con un deseo constante de comprender cómo funcionan las cosas. Más que buscar reconocimientos, he procurado acumular experiencias, desarrollar habilidades y entender los procesos que hacen posible transformar una idea en una solución real.
-                Mi camino académico ha sido una parte fundamental de mi historia. Fui alumno distinguido y abanderado de manera constante desde el jardín de infancia hasta el básico. Más adelante estudié la carrera de Perito Contador en el Instituto Tecnológico Tec Zión, donde logré graduarme con el segundo mejor promedio de mi promoción. Durante esta etapa también alcancé un nivel avanzado de inglés, gracias al esfuerzo personal, el aprendizaje autodidacta y el trabajo colaborativo.
-                Llegar a Tec Zión representó una decisión importante para mí y para mi familia. En mi lugar de origen no encontraba una oferta académica que respondiera a mis expectativas de formación, por lo que decidí trasladarme a otro departamento para continuar mis estudios. Durante ese tiempo viví lejos de mi familia, mientras ellos permanecían en Nebaj. No fue solo un cambio de lugar; fue una decisión de vida, marcada por la búsqueda de excelencia y por el deseo de prepararme mejor para el futuro.
-                Gracias a mi desempeño académico y personal, recibí una beca de la Fundación Transformando Vidas, apoyo que fue clave para seguir adelante con mis estudios, esta oportunidad no solo alivió una carga importante para mis papás, sino que también confirmó algo muy valioso: cuando alguien cree en un joven, ese joven puede avanzar con más fuerza, seguridad y propósito.
-                La formación recibida en Tec Zión respaldado por la Fundación Transformando Vidas fueron un puente decisivo para culminar con éxito mi carrera técnica y prepararme para nuevos desafíos. Hoy soy estudiante de tercer año de la Licenciatura en Computer Science en la Universidad Francisco Marroquín, donde también fui beneficiado con una beca del programa ITA. Este paso representa la continuidad de un sueño que comenzó en Nebaj, se fortaleció en Tec Zión  con  el apoyo de la Fundación y hoy sigue creciendo en el campo de la tecnología.
-                Además de mis estudios universitarios, he procurado mantener una vida activa de liderazgo y servicio. Soy cofundador del Maker’s Club en la Universidad Francisco Marroquín, un espacio donde impulsamos proyectos que integran electrónica, informática, diseño e impresión 3D. También he servido como instructor de inglés para secciones intensivas de fin de semana y como facilitador de grupos de estudio avanzado en el Instituto Tec Zión. Estas experiencias me han permitido compartir lo aprendido y apoyar a otros estudiantes en su proceso de crecimiento.
-                A lo largo de mi vida también he participado en actividades deportivas, culturales y académicas. Obtuve medalla de oro en ajedrez a nivel primario, participé en bandas escolares y formé parte de equipos de fútbol, baloncesto y balonmano. Cada una de estas experiencias me ayudó a desarrollar disciplina, trabajo en equipo, liderazgo y perseverancia.
-                Hoy miro hacia atrás con gratitud. La beca que recibí de la Fundación Transformando Vidas no fue solamente un apoyo económico; fue una oportunidad que fortaleció mi camino, abrió nuevas posibilidades y me impulsó a creer que los sueños pueden alcanzarse cuando se combinan esfuerzo, excelencia y acompañamiento.
-                También me llena de alegría saber que mi decisión de estudiar fuera de Nebaj inspiró a mis hermanos a seguir preparándose en el Instituto Tec Zión. Esto demuestra que una oportunidad no transforma únicamente a una persona; también puede impactar a una familia y abrir camino para las siguientes generaciones.
-                “Una beca puede ser el puente entre el talento de un joven y el futuro que sueña construir.” "
-              </p>
-            </details>
-          </div>
-
-          <div class="absolute inset-0 hidden rounded-3xl bg-primary-950/80 p-6 opacity-0 transition duration-300 group-hover:block group-hover:opacity-100 md:block">
-            <div class="flex h-full flex-col justify-between">
-              <div class="overflow-y-auto pr-1 text-sm leading-relaxed text-primary-100">
-                "Mi nombre es Jonatan Josué Aguilar Ramírez. Nací el 5 de enero de 2005 en Nebaj, Quiché, Guatemala, en un entorno familiar marcado por el trabajo, el comercio y la responsabilidad. Desde muy pequeño aprendí que cada logro requiere esfuerzo, disciplina y compromiso.
-                Siempre me he considerado una persona curiosa, apasionada por aprender y con un deseo constante de comprender cómo funcionan las cosas. Más que buscar reconocimientos, he procurado acumular experiencias, desarrollar habilidades y entender los procesos que hacen posible transformar una idea en una solución real.
-                Mi camino académico ha sido una parte fundamental de mi historia. Fui alumno distinguido y abanderado de manera constante desde el jardín de infancia hasta el básico. Más adelante estudié la carrera de Perito Contador en el Instituto Tecnológico Tec Zión, donde logré graduarme con el segundo mejor promedio de mi promoción. Durante esta etapa también alcancé un nivel avanzado de inglés, gracias al esfuerzo personal, el aprendizaje autodidacta y el trabajo colaborativo.
-                Llegar a Tec Zión representó una decisión importante para mí y para mi familia. En mi lugar de origen no encontraba una oferta académica que respondiera a mis expectativas de formación, por lo que decidí trasladarme a otro departamento para continuar mis estudios. Durante ese tiempo viví lejos de mi familia, mientras ellos permanecían en Nebaj. No fue solo un cambio de lugar; fue una decisión de vida, marcada por la búsqueda de excelencia y por el deseo de prepararme mejor para el futuro.
-                Gracias a mi desempeño académico y personal, recibí una beca de la Fundación Transformando Vidas, apoyo que fue clave para seguir adelante con mis estudios, esta oportunidad no solo alivió una carga importante para mis papás, sino que también confirmó algo muy valioso: cuando alguien cree en un joven, ese joven puede avanzar con más fuerza, seguridad y propósito.
-                La formación recibida en Tec Zión respaldado por la Fundación Transformando Vidas fueron un puente decisivo para culminar con éxito mi carrera técnica y prepararme para nuevos desafíos. Hoy soy estudiante de tercer año de la Licenciatura en Computer Science en la Universidad Francisco Marroquín, donde también fui beneficiado con una beca del programa ITA. Este paso representa la continuidad de un sueño que comenzó en Nebaj, se fortaleció en Tec Zión  con  el apoyo de la Fundación y hoy sigue creciendo en el campo de la tecnología.
-                Además de mis estudios universitarios, he procurado mantener una vida activa de liderazgo y servicio. Soy cofundador del Maker’s Club en la Universidad Francisco Marroquín, un espacio donde impulsamos proyectos que integran electrónica, informática, diseño e impresión 3D. También he servido como instructor de inglés para secciones intensivas de fin de semana y como facilitador de grupos de estudio avanzado en el Instituto Tec Zión. Estas experiencias me han permitido compartir lo aprendido y apoyar a otros estudiantes en su proceso de crecimiento.
-                A lo largo de mi vida también he participado en actividades deportivas, culturales y académicas. Obtuve medalla de oro en ajedrez a nivel primario, participé en bandas escolares y formé parte de equipos de fútbol, baloncesto y balonmano. Cada una de estas experiencias me ayudó a desarrollar disciplina, trabajo en equipo, liderazgo y perseverancia.
-                Hoy miro hacia atrás con gratitud. La beca que recibí de la Fundación Transformando Vidas no fue solamente un apoyo económico; fue una oportunidad que fortaleció mi camino, abrió nuevas posibilidades y me impulsó a creer que los sueños pueden alcanzarse cuando se combinan esfuerzo, excelencia y acompañamiento.
-                También me llena de alegría saber que mi decisión de estudiar fuera de Nebaj inspiró a mis hermanos a seguir preparándose en el Instituto Tec Zión. Esto demuestra que una oportunidad no transforma únicamente a una persona; también puede impactar a una familia y abrir camino para las siguientes generaciones.
-                “Una beca puede ser el puente entre el talento de un joven y el futuro que sueña construir.”
-"
+            <div class={`absolute inset-0 hidden rounded-3xl p-6 opacity-0 transition duration-300 group-hover:block group-hover:opacity-100 md:block ${color.overlay}`}>
+              <div class="flex h-full flex-col justify-between">
+                <div class={`overflow-y-auto pr-1 text-sm leading-relaxed ${color.summary}`}>
+                  "{testimonio.historia}"
+                </div>
+                <p class={`mt-6 text-right text-xs uppercase tracking-[0.24em] ${color.action}`}>
+                  Desliza o haz hover para cerrar
+                </p>
               </div>
-              <p class="mt-6 text-right text-xs uppercase tracking-[0.24em] text-secondary">
-                Desliza o haz hover para cerrar
-              </p>
             </div>
-          </div>
-        </article>
-
-        <article class="group relative overflow-hidden rounded-3xl border border-primary-600 bg-primary-800/90 text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-primary-900/95 hover:shadow-2xl">
-          <img
-            class="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
-            src="/images/testimonio4.jfif"
-            alt="Allan Lacan"
-            loading="lazy"
-          />
-          <div class="relative p-6">
-            <div class="mb-5 max-h-40 overflow-hidden text-primary-100 text-xs leading-snug">
-              "Gracias a la beca pude estudiar Electrónica y Dispositivos Digitales y llegar a ser primer lugar de mi promoción.
-              Hoy quiero usar ese conocimiento para ayudar a mi comunidad."
-            </div>
-            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <h3 class="font-bold text-white">Allan Lacán (Becado)</h3>
-              <span class="hidden rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/80 transition group-hover:bg-white/20 md:inline">
-                Pasa el cursor para leer todo
-              </span>
-            </div>
-
-            <details class="mt-4 rounded-2xl bg-primary-900/80 p-4 text-sm md:hidden">
-              <summary class="inline-flex w-full cursor-pointer items-center justify-between rounded-full border border-white/20 bg-white/10 px-4 py-3 font-semibold text-white transition hover:bg-white/20">
-                Leer historia completa
-              </summary>
-              <p class="mt-3 leading-relaxed text-primary-100">
-                "Mi nombre es Allan Daniel Lacán Vásquez, originario de la cabecera de Totonicapán. Gracias al apoyo de Fundación Transformando Vidas y al acceso a una beca completa, tuve la oportunidad de estudiar la carrera de Perito en Electrónica y Dispositivos Digitales, graduándome como primer lugar de mi promoción.
-              Desde siempre he buscado superarme, establecer nuevos retos y aprender constantemente, con el propósito de aplicar ese conocimiento para transformar mi vida y mi entorno.
-              Durante mi formación, desarrollé habilidades técnicas y de liderazgo que me permitieron vivir experiencias importantes, como participar en la Olimpiada Nacional de Ciencias 2023 en el área de Física Diversificado, donde obtuve el cuarto lugar a nivel nacional. Además, tuve la oportunidad de formarme en el idioma inglés, ampliando mis posibilidades académicas y profesionales.
-              Actualmente estudio Ingeniería en Sistemas y Ciencias de la Computación en la Universidad Mariano Gálvez de Guatemala, un logro que representa un paso más hacia mi meta de contribuir al desarrollo de mi comunidad.
-              Mi mayor deseo es acercar la educación tecnológica a más personas y hacer que la tecnología sea una herramienta accesible para transformar vidas. Hoy puedo decir con certeza que Fundación Transformando Vidas no solo brinda apoyo educativo, sino que ofrece las herramientas necesarias para impulsar nuestros sueños y convertirlos en realidad."
-              </p>
-            </details>
-          </div>
-
-          <div class="absolute inset-0 hidden rounded-3xl bg-primary-950/80 p-6 opacity-0 transition duration-300 group-hover:block group-hover:opacity-100 md:block">
-            <div class="flex h-full flex-col justify-between">
-              <div class="overflow-y-auto pr-1 text-sm leading-relaxed text-primary-100">
-                "Mi nombre es Allan Daniel Lacán Vásquez, originario de la cabecera de Totonicapán. Gracias al apoyo de Fundación Transformando Vidas y al acceso a una beca completa, tuve la oportunidad de estudiar la carrera de Perito en Electrónica y Dispositivos Digitales, graduándome como primer lugar de mi promoción.
-              Desde siempre he buscado superarme, establecer nuevos retos y aprender constantemente, con el propósito de aplicar ese conocimiento para transformar mi vida y mi entorno.
-              Durante mi formación, desarrollé habilidades técnicas y de liderazgo que me permitieron vivir experiencias importantes, como participar en la Olimpiada Nacional de Ciencias 2023 en el área de Física Diversificado, donde obtuve el cuarto lugar a nivel nacional. Además, tuve la oportunidad de formarme en el idioma inglés, ampliando mis posibilidades académicas y profesionales.
-              Actualmente estudio Ingeniería en Sistemas y Ciencias de la Computación en la Universidad Mariano Gálvez de Guatemala, un logro que representa un paso más hacia mi meta de contribuir al desarrollo de mi comunidad.
-              Mi mayor deseo es acercar la educación tecnológica a más personas y hacer que la tecnología sea una herramienta accesible para transformar vidas. Hoy puedo decir con certeza que Fundación Transformando Vidas no solo brinda apoyo educativo, sino que ofrece las herramientas necesarias para impulsar nuestros sueños y convertirlos en realidad."
-              </div>
-              <p class="mt-6 text-right text-xs uppercase tracking-[0.24em] text-secondary">
-                Desliza o haz hover para cerrar
-              </p>
-            </div>
-          </div>
-        </article>
+          </article>
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <section class="bg-primary-600">
+  <section class="bg-coral">
     <div
       class="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-16 text-center sm:grid-cols-3"
     >
       <!-- Jóvenes becados -->
       <div class="animate fade-up">
         <div
-          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-success-500">
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-coral">
           <svg
             class="h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"
@@ -471,7 +380,7 @@ const dailyQuote = getDailyQuote();
       <!-- Departamentos -->
       <div class="animate fade-up delay-100">
         <div
-          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-success-500"
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-teal"
         >
           <svg
             class="h-8 w-8"
@@ -495,7 +404,7 @@ const dailyQuote = getDailyQuote();
       <!-- Años -->
       <div class="animate fade-up delay-200">
         <div
-          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-success-500"
+          class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-sun"
         >
           <svg
             class="h-8 w-8"
@@ -563,7 +472,7 @@ const dailyQuote = getDailyQuote();
       <div class="max-w-xl">
 
         <span
-          class="mb-3 inline-block rounded-full bg-primary-50 px-4 py-1 text-sm font-semibold text-primary-600"
+          class="mb-3 inline-block rounded-full bg-coral-soft px-4 py-1 text-sm font-semibold text-coral"
         >
           Nuestra misión
         </span>
@@ -581,7 +490,7 @@ const dailyQuote = getDailyQuote();
 
         <a
           href="/nosotros"
-          class="inline-flex items-center rounded-lg bg-primary-700 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-primary-800 hover:shadow-md"
+          class="inline-flex items-center rounded-lg bg-coral px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-coral-muted hover:shadow-md"
         >
           Conocer más
         </a>
@@ -602,7 +511,7 @@ const dailyQuote = getDailyQuote();
       <p class="mb-6 text-white">Aplica a una beca y cambia tu historia.</p>
       <a
         href="/aplicacion"
-        class="rounded-lg bg-accent-400 px-6 py-3 font-semibold text-white hover:bg-primary-100"
+        class="rounded-lg bg-coral px-6 py-3 font-semibold text-white hover:bg-coral-muted"
       >
         Aplicar ahora
       </a>
