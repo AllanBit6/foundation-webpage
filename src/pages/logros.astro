@@ -28,14 +28,14 @@ const logros = [
     titulo: "Graduacion de estudiantes",
     fecha: "2022",
     descripcion:
-      "Estudiantes y padres de familia celebraron la graduación de alrededor de 150 estudiantes que culminaron sus estudios de las diferentes carreras diversificadas (biología, electrónica, mecánica automotriz, perito contador y bachillerato bilingüe) en el año 2023, con la presencia de autoridades locales, familiares y amigos.",
+      "Estudiantes y padres de familia celebraron la graduación de alrededor de 150 estudiantes que culminaron sus estudios de las diferentes carreras de nivel diversificado (ciencias biología, perito electrónica, mecánica automotriz, perito contador bilingüe y bachillerato bilingüe), con la presencia de autoridades locales, familiares y amigos.",
     imagen: "/images/graduacion2023.jpg",
   },
   {
     titulo: "Graduacion de estudiantes",
     fecha: "2024",
     descripcion:
-      "Se graduaron alrededor de 125 estudiantes de las diferentes carreras diversificadas (biología, electrónica, mecánica automotriz, perito contador y bachillerato bilingüe) en el año 2024, con la presencia de autoridades locales, familiares y amigos.",
+      "Se graduaron alrededor de 125 estudiantes de las diferentes carreras de nivel diversificado (ciencias biología, perito electrónica, mecánica automotriz, perito contador bilingüe y bachillerato bilingüe).",
     imagen: "/images/graduacion2024.JPG",
   },
   {
@@ -56,7 +56,7 @@ const logros = [
     titulo: "Presencia en Olimpiada Nacional de Ciencias",
     fecha: "2018",
     descripcion:
-      "Estudiantes de las diferentes carreras tuvieron el honor de participar en la ONC del año 2028 teniendo un destacado desempeño, logrando ocupar lugares a nivel regional",
+      "Estudiantes de las diferentes carreras tuvieron el honor de participar en la ONC del año 2018 teniendo un destacado desempeño, logrando ocupar lugares a nivel regional",
     imagen: "/images/olimpiadas2018.jpg",
   },
   {
@@ -145,7 +145,58 @@ const videos = [
   {
     titulo: "Ciencias Aplicadas",
     youtubeId: "lAK_THe3z8k?si=-9y72JQLAqypoamP",
+  },
+  {
+    titulo: "Intervencion jurados Feria Científica 2025",
+    youtubeId: "pu1xEgxu1Jg?si=BAXHxi46_YsPNm28"
+  },
+  {
+    titulo: "Energia Limpia",
+    youtubeId: "74V-fSp7zJM?si=mQuP639Sasg59IIT"
+  },
+  {
+    titulo: "Demostracion de sistemas con Microcontroladores",
+    youtubeId: "WHFJ8KmSi4k?si=R9uVfEQ_u1NWfDPg"
+  },
+  {
+    titulo:"Sistemas aplicables a la vida",
+    youtubeId:"_rNE3USB550?si=3kw8tYD79z91x8T9"
+  },
+  {
+    titulo:"Tecnologia para resolver problemas",
+    youtubeId:"qTOOwl0eKlA"
   }
+];
+
+const logroThemes = [
+  {
+    card: "border-coral/25 bg-coral-soft hover:border-coral/50",
+    media: "bg-coral-soft",
+    divider: "border-coral/30",
+    date: "bg-coral text-white",
+    title: "text-primary-800",
+  },
+  {
+    card: "border-teal/25 bg-teal-soft hover:border-teal/50",
+    media: "bg-teal-soft",
+    divider: "border-teal/30",
+    date: "bg-teal text-white",
+    title: "text-primary-800",
+  },
+  {
+    card: "border-sun/35 bg-sun-soft hover:border-sun/70",
+    media: "bg-sun-soft",
+    divider: "border-sun/50",
+    date: "bg-sun text-primary-950",
+    title: "text-primary-800",
+  },
+  {
+    card: "border-primary-200 bg-secondary-soft hover:border-primary-400",
+    media: "bg-primary-100",
+    divider: "border-primary-200",
+    date: "bg-primary-700 text-white",
+    title: "text-primary-700",
+  },
 ];
 ---
 
@@ -158,7 +209,7 @@ const videos = [
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 
     <div class="mx-auto mb-10 max-w-3xl text-center">
-      <span class="animate fade-left text-sm font-bold uppercase tracking-wide text-primary-600">
+      <span class="animate fade-left text-sm font-bold uppercase tracking-wide text-coral">
         Galería de logros
       </span>
 
@@ -174,10 +225,13 @@ const videos = [
 
     <div class="columns-1 gap-6 sm:columns-2 lg:columns-3">
 
-      {logros.map((logro) => (
-        <article class="animate pop-strong mb-6 break-inside-avoid overflow-hidden rounded-2xl border border-secondary/60 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+      {logros.map((logro, index) => {
+        const theme = logroThemes[index % logroThemes.length];
 
-          <div class="overflow-hidden bg-primary-100">
+        return (
+        <article class={`animate pop-strong mb-6 break-inside-avoid overflow-hidden rounded-2xl border shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg ${theme.card}`}>
+
+          <div class={`overflow-hidden ${theme.media}`}>
             {logro.imagen ? (
               <img
                 class="h-auto w-full object-cover transition duration-500 hover:scale-105"
@@ -194,12 +248,12 @@ const videos = [
             )}
           </div>
 
-          <div class="p-6">
-            <time class="text-sm font-bold uppercase tracking-wide text-primary-600">
+          <div class={`p-6 border-t-2 ${theme.divider}`}>
+            <time class={`inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide ${theme.date}`}>
               {logro.fecha}
             </time>
 
-            <h3 class="mt-2 font-heading text-xl font-bold text-primary-700">
+            <h3 class={`mt-3 font-heading text-xl font-bold ${theme.title}`}>
               {logro.titulo}
             </h3>
 
@@ -208,7 +262,8 @@ const videos = [
             </p>
           </div>
         </article>
-      ))}
+        );
+      })}
 
     </div>
   </div>
@@ -217,7 +272,7 @@ const videos = [
   <section class="bg-secondary-soft">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div class="mx-auto mb-10 max-w-3xl text-center">
-        <span class="animate pop-strong text-sm font-bold uppercase tracking-wide text-primary-600">
+        <span class="animate pop-strong text-sm font-bold uppercase tracking-wide text-coral">
           Videos
         </span>
         <h2 class="animate pop mt-3 font-heading text-3xl font-extrabold text-primary-700 sm:text-4xl">
@@ -230,8 +285,8 @@ const videos = [
 
       <div class="animate zoom-fade grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {videos.map((video) => (
-          <article class="animate pop-strong overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm">
-            <div class="aspect-9/16 bg-primary-100">
+          <article class="animate pop-strong overflow-hidden rounded-lg border border-secondary/60 bg-white shadow-sm transition hover:border-coral/30">
+            <div class="aspect-9/16 bg-teal-soft">
               {video.youtubeId ? (
                 <iframe
                   class="h-full w-full"
