@@ -12,6 +12,18 @@ const layoutClasses = [
   "lg:col-span-4",
   "lg:col-span-4",
 ];
+
+const colorClasses = [
+  "border-coral/25 text-coral hover:border-coral/45 hover:shadow-coral/15",
+  "border-teal/25 text-teal hover:border-teal/45 hover:shadow-teal/15",
+  "border-sun/45 text-sun hover:border-sun/65 hover:shadow-sun/20",
+  "border-primary-300 text-primary-700 hover:border-primary-400 hover:shadow-primary-700/15",
+  "border-coral/25 text-coral hover:border-coral/45 hover:shadow-coral/15",
+  "border-teal/25 text-teal hover:border-teal/45 hover:shadow-teal/15",
+  "border-primary-300 text-primary-700 hover:border-primary-400 hover:shadow-primary-700/15",
+  "border-sun/45 text-sun hover:border-sun/65 hover:shadow-sun/20",
+  "border-coral/25 text-coral hover:border-coral/45 hover:shadow-coral/15",
+];
 ---
 
 <section class="bg-slate-100 py-10 md:py-12">
@@ -27,12 +39,16 @@ const layoutClasses = [
 
     <div class="mx-auto grid max-w-5xl gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-12 lg:items-stretch">
       {stats.map((stat: any, index: number) => (
-        <article class={`min-h-30 rounded-lg bg-white px-4 py-4 shadow-md shadow-slate-900/15 ring-1 ring-slate-200 transition duration-300 hover:-translate-y-0.5 hover:shadow-lg sm:min-h-32 sm:px-5 ${layoutClasses[index] ?? "lg:col-span-4"}`}>
-          <div class="flex h-full flex-col items-center justify-center text-center">
-            <div data-stat-icon class="flex h-9 w-9 shrink-0 items-center justify-center text-coral md:h-10 md:w-10" set:html={stat.icon}></div>
+        <article data-random-stat-card class={`group relative min-h-30 overflow-hidden rounded-lg border bg-white px-4 py-4 shadow-md shadow-slate-900/15 ring-1 ring-white/70 transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-32 sm:px-5 ${colorClasses[index] ?? colorClasses[0]} ${layoutClasses[index] ?? "lg:col-span-4"}`}>
+          <div data-random-stat-image class="absolute inset-0 opacity-0"></div>
+          <div data-random-stat-overlay class="absolute inset-0 bg-linear-to-br from-white/95 via-white/88 to-white/78 transition duration-500 group-hover:from-white/90 group-hover:via-white/78 group-hover:to-white/68"></div>
+          <div class="absolute inset-x-0 top-0 h-1 bg-current opacity-80"></div>
+
+          <div class="relative flex h-full flex-col items-center justify-center text-center">
+            <div data-stat-icon class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-current/10 p-1.5 text-current ring-1 ring-current/15 transition duration-300 group-hover:scale-110 group-hover:bg-current/15 md:h-10 md:w-10" set:html={stat.icon}></div>
 
             <div class="mt-2 flex min-h-9 items-center justify-center">
-              <p data-stat-value class="text-2xl font-extrabold leading-none text-coral md:text-3xl">
+              <p data-stat-value class="text-2xl font-extrabold leading-none text-current md:text-3xl">
                 {stat.prefix}
                 {stat.displayValue ? (
                   <span>{stat.displayValue}</span>
@@ -54,6 +70,29 @@ const layoutClasses = [
 </section>
 
 <style is:global>
+  [data-random-stat-card] {
+    isolation: isolate;
+  }
+
+  [data-random-stat-image] {
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.04);
+    transition:
+      opacity 700ms ease,
+      background-position 1900ms ease,
+      transform 1900ms ease;
+  }
+
+  [data-random-stat-card][data-image-visible="true"] [data-random-stat-image] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  [data-random-stat-card][data-image-visible="true"] [data-random-stat-overlay] {
+    opacity: 0.72;
+  }
+
   [data-stat-icon] svg {
     display: block;
     height: 100%;
