@@ -162,6 +162,9 @@ const coloresTestimonio = {
     src="/images/home1.JPG"
     alt="Estudiantes beneficiados por la fundación"
     class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
   />
 
   <!-- Overlay -->
@@ -368,6 +371,7 @@ const coloresTestimonio = {
               src={testimonio.imagen}
               alt={testimonio.nombre}
               loading="lazy"
+              decoding="async"
             />
 
             <div class="relative p-6">
@@ -527,6 +531,8 @@ const coloresTestimonio = {
         src="/images/nosotrosnew.jpg"
         alt="Equipo de la Fundación Transformando Vidas"
         class="h-full max-h-125 w-full rounded-2xl object-cover shadow-xl"
+        loading="lazy"
+        decoding="async"
       />
     </div>
 

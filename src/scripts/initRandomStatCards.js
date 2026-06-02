@@ -27,6 +27,8 @@ function randomDelay() {
 }
 
 export function initRandomStatCards() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
   const cards = document.querySelectorAll("[data-random-stat-card]");
   if (!cards.length) return;
 

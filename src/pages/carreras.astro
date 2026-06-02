@@ -112,6 +112,8 @@ const carreras = [
                   class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                   src={carrera.video}
                   autoplay
+                  muted
+                  playsinline
                   preload="metadata"
                   loop
                   aria-label={`Video de ${carrera.nombre}`}
@@ -129,7 +131,7 @@ const carreras = [
               <h3 class="animate rotate-in font-heading text-xl font-bold text-primary-700">
                 {carrera.nombre}
               </h3>
-              <p class="animte fade-down mt-3 text-sm leading-6 text-primary-800 sm:text-base text-justify">
+              <p class="animate fade-up mt-3 text-sm leading-6 text-primary-800 sm:text-base text-justify">
                 {carrera.descripcion}
               </p>
 

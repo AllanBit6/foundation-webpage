@@ -35,5 +35,10 @@ export function initStatsCounter() {
     });
   }, { threshold: 0.4 });
 
-  stats.forEach((s) => observer.observe(s));
+  stats.forEach((s) => {
+    if (s.dataset.counted === "true" || s.dataset.observing === "true") return;
+
+    s.dataset.observing = "true";
+    observer.observe(s);
+  });
 }

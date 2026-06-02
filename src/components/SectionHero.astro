@@ -13,6 +13,7 @@ const hasMedia = Boolean(video || image);
       muted
       loop
       playsinline
+      preload="metadata"
     ></video>
   )}
 
@@ -22,6 +23,8 @@ const hasMedia = Boolean(video || image);
       src={image}
       alt=""
       loading="eager"
+      decoding="async"
+      fetchpriority="high"
     />
   )}
 

@@ -238,6 +238,7 @@ const logroThemes = [
                 src={logro.imagen}
                 alt={logro.titulo}
                 loading="lazy"
+                decoding="async"
               />
             ) : (
               <div class="flex h-64 items-center justify-center">
@@ -293,6 +294,7 @@ const logroThemes = [
                   src={`https://www.youtube.com/embed/${video.youtubeId}`}
                   title={video.titulo}
                   loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
                 ></iframe>
