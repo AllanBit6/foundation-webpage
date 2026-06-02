@@ -1,0 +1,68 @@
+---
+const { stats = [] } = Astro.props;
+
+const layoutClasses = [
+  "lg:col-start-3 lg:col-span-4",
+  "lg:col-span-4",
+  "lg:col-start-2 lg:col-span-4",
+  "lg:col-span-6",
+  "lg:col-start-4 lg:col-span-6",
+];
+---
+
+<section class="bg-slate-100 py-16 md:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="mx-auto mb-14 max-w-3xl text-center">
+      <p class="text-4xl font-extrabold uppercase leading-tight text-coral md:text-5xl">
+        Resultados
+      </p>
+      <h2 class="mt-1 text-4xl font-extrabold uppercase leading-tight text-primary-700 md:text-5xl">
+        A la fecha
+      </h2>
+    </div>
+
+    <div class="mx-auto grid max-w-5xl gap-x-6 gap-y-7 sm:grid-cols-2 lg:grid-cols-12 lg:items-center">
+      {stats.map((stat: any, index: number) => (
+        <article class={`min-h-40 rounded-lg bg-white px-6 py-7 shadow-lg shadow-slate-900/20 ring-1 ring-slate-200 sm:px-8 ${layoutClasses[index] ?? "lg:col-span-4"}`}>
+          <div class="flex h-full flex-col items-center justify-center text-center">
+            <div class="flex min-h-20 flex-wrap items-center justify-center gap-x-4 gap-y-3">
+              {stat.iconPosition === "before" && (
+                <div data-stat-icon class="flex h-16 w-16 shrink-0 items-center justify-center text-coral" set:html={stat.icon}></div>
+              )}
+
+              <p class="shrink-0 text-5xl font-extrabold leading-none text-coral md:text-6xl">
+                {stat.prefix}
+                <span class="stat" data-target={stat.value}>0</span>
+                {stat.suffix}
+              </p>
+
+              {stat.iconPosition !== "before" && (
+                <div data-stat-icon class="flex h-16 w-16 shrink-0 items-center justify-center text-coral" set:html={stat.icon}></div>
+              )}
+            </div>
+
+            <p class="mt-5 min-h-12 max-w-64 text-pretty text-lg font-bold leading-snug text-primary-700">
+              {stat.label}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  [data-stat-icon] svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  [data-stat-icon] svg [fill]:not([fill="none"]) {
+    fill: currentColor;
+  }
+
+  [data-stat-icon] svg [stroke]:not([stroke="none"]) {
+    stroke: currentColor;
+  }
+</style>

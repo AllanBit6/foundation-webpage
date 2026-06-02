@@ -1,0 +1,38 @@
+---
+const { stats = [], title = "RESULTADOS", subtitle = "A la fecha" } = Astro.props;
+---
+
+<section class="bg-slate-50 py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="mx-auto mb-10 max-w-3xl text-center">
+      <p class="text-coral text-sm font-bold uppercase tracking-[0.4em] sm:text-base">
+        {title}
+      </p>
+      <h2 class="mt-3 text-4xl font-extrabold text-primary-700 sm:text-5xl">
+        {subtitle}
+      </h2>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+      {stats.map((stat: any) => (
+        <article class="overflow-hidden rounded-[1.75rem] bg-white p-6 shadow-lg shadow-slate-900/5 ring-1 ring-slate-200 transition">
+          <div class="flex items-center gap-4">
+            <div class={`flex h-14 w-14 items-center justify-center rounded-3xl ${stat.bg}`}>
+              <div class="h-7 w-7" set:html={stat.icon}></div>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-primary-700">
+                {stat.prefix}
+                <span class="stat" data-target={stat.value}>0</span>
+                {stat.suffix}
+              </p>
+              <p class="mt-2 text-sm font-medium text-primary-600">
+                {stat.label}
+              </p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
