@@ -5,6 +5,42 @@ const { pathname } = Astro.url;
 
 const isActive = (path: any) =>
   pathname === path || pathname.startsWith(path + "/");
+
+const navItems = [
+  { label: "Inicio", href: "/" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Programas", href: "/programas" },
+  { label: "Carreras", href: "/carreras" },
+  { label: "Proceso", href: "/aplicacion" },
+  { label: "Logros", href: "/logros" },
+];
+
+const actionItems = [
+  {
+    label: "Aplicar a beca",
+    href: "/aplicacion#formulario",
+    activePath: "/aplicacion",
+    className: "bg-coral text-white hover:bg-coral-muted",
+    activeClassName: "bg-coral text-white",
+    mobileClassName: "bg-coral text-white",
+  },
+  {
+    label: "Quiero apoyar",
+    href: "/involucrate",
+    activePath: "/involucrate",
+    className: "border border-teal/30 bg-teal-soft text-primary-800 hover:border-teal hover:bg-white",
+    activeClassName: "border border-teal bg-teal-soft text-primary-900",
+    mobileClassName: "border border-teal/30 bg-teal-soft text-primary-800",
+  },
+  {
+    label: "Tourism with Purpose",
+    href: "/tourism-with-purpose",
+    activePath: "/tourism-with-purpose",
+    className: "bg-sun text-primary-950 hover:bg-coral hover:text-white",
+    activeClassName: "bg-sun text-primary-950",
+    mobileClassName: "bg-sun text-primary-950",
+  },
+];
 ---
 
 <header class="fixed left-0 top-0 z-50 w-full">
@@ -27,124 +63,46 @@ const isActive = (path: any) =>
 
       <!-- Desktop Menu -->
       <div class="hidden lg:flex lg:flex-1 lg:justify-center">
-        <ul class="flex items-center space-x-8 font-semibold">
+        <ul class="flex items-center gap-7 font-semibold">
+          {navItems.map((item) => {
+            const active = isActive(item.href);
 
-          <li>
-            <a
-              href="/"
-              class={`transition ${
-                isActive("/")
-                  ? "font-bold text-coral"
-                  : "text-primary-700 hover:text-coral"
-              }`}
-            >
-              Inicio
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/nosotros"
-              class={`transition ${
-                isActive("/nosotros")
-                  ? "font-bold text-coral"
-                  : "text-primary-700 hover:text-coral"
-              }`}
-            >
-              Nosotros
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/programas"
-              class={`transition ${
-                isActive("/programas")
-                  ? "font-bold text-coral"
-                  : "text-primary-700 hover:text-coral"
-              }`}
-            >
-              Programas
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/logros"
-              class={`transition ${
-                isActive("/logros")
-                  ? "font-bold text-coral"
-                  : "text-primary-700 hover:text-coral"
-              }`}
-            >
-              Logros
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/carreras"
-              class={`transition ${
-                isActive("/carreras")
-                  ? "font-bold text-coral"
-                  : "text-primary-700 hover:text-coral"
-              }`}
-            >
-              Carreras
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/aplicacion"
-              class={`transition ${
-                isActive("/aplicacion")
-                  ? "font-bold text-coral"
-                  : "text-primary-700 hover:text-coral"
-              }`}
-            >
-              Proceso
-            </a>
-          </li>
-
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  class={`transition ${
+                    active
+                      ? "font-bold text-coral"
+                      : "text-primary-700 hover:text-coral"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
       <!-- CTA Buttons -->
       <div class="hidden items-center gap-2 lg:flex">
+        {actionItems.map((item) => {
+          const active = isActive(item.activePath);
 
-        <a
-          href="/aplicacion#formulario"
-          class={`rounded-lg px-4 py-2 text-sm font-semibold shadow-sm transition ${
-            isActive("/aplicacion")
-              ? "bg-coral text-white"
-              : "bg-coral text-white hover:bg-coral-muted"
-          }`}
-        >
-          Aplicar a una beca
-        </a>
-
-        <a
-          href="/tourism-with-purpose"
-          class={`rounded-lg px-4 py-2 text-sm font-semibold shadow-sm transition ${
-            isActive("/tourism-with-purpose")
-              ? "bg-sun text-primary-950"
-              : "bg-sun text-primary-950 hover:bg-coral hover:text-white"
-          }`}
-        >
-        Tourism with Purpose
-        </a>
-
-        <a
-          href="/involucrate"
-          class={`rounded-lg border px-4 py-2 text-sm font-semibold transition ${
-            isActive("/involucrate")
-              ? "border-teal bg-teal-soft text-primary-900"
-              : "border-teal/30 bg-teal-soft text-primary-800 hover:border-teal hover:bg-white"
-          }`}
-        >
-          Quiero apoyar
-        </a>
+          return (
+            <a
+              href={item.href}
+              aria-current={active ? "page" : undefined}
+              class={`rounded-lg px-4 py-2 text-sm font-semibold shadow-sm transition ${
+                active ? item.activeClassName : item.className
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
       </div>
 
       <!-- Mobile Menu Button -->
@@ -152,6 +110,7 @@ const isActive = (path: any) =>
         id="menu-btn"
         class="ml-1 inline-flex items-center rounded-lg p-2 text-primary-700 hover:bg-coral-soft hover:text-coral lg:hidden"
         aria-label="Abrir menu"
+        aria-expanded="false"
       >
         <span class="text-2xl leading-none">&#9776;</span>
       </button>
@@ -164,72 +123,38 @@ const isActive = (path: any) =>
   id="mobile-menu"
   class="pointer-events-none max-h-0 -translate-y-2 overflow-hidden border-t border-secondary/60 bg-white opacity-0 shadow-sm transition-all duration-300 ease-out lg:hidden"
 >
-  <ul class="mx-auto flex max-w-md flex-col gap-8 px-6 py-6 text-lg font-semibold text-primary-800">
+  <ul class="mx-auto flex max-w-md flex-col gap-5 px-6 py-6 text-lg font-semibold text-primary-800">
 
-    <li>
-      <a href="/" class={isActive("/") ? "font-bold text-coral" : ""}>
-        Inicio
-      </a>
-    </li>
+    {navItems.map((item) => {
+      const active = isActive(item.href);
 
-    <li>
-      <a href="/nosotros" class={isActive("/nosotros") ? "font-bold text-coral" : ""}>
-        Nosotros
-      </a>
-    </li>
-
-    <li>
-      <a href="/programas" class={isActive("/programas") ? "font-bold text-coral" : ""}>
-        Programas
-      </a>
-    </li>
-
-    <li>
-      <a href="/logros" class={isActive("/logros") ? "font-bold text-coral" : ""}>
-        Logros
-      </a>
-    </li>
-
-    <li>
-      <a href="/carreras" class={isActive("/carreras") ? "font-bold text-coral" : ""}>
-        Carreras
-      </a>
-    </li>
-
-    <li>
-      <a href="/aplicacion" class={isActive("/aplicacion") ? "font-bold text-coral" : ""}>
-        Proceso
-      </a>
-    </li>
+      return (
+        <li>
+          <a
+            href={item.href}
+            aria-current={active ? "page" : undefined}
+            class={`block rounded-lg px-3 py-2 transition ${
+              active ? "bg-coral-soft font-bold text-coral" : "hover:bg-secondary-soft hover:text-coral"
+            }`}
+          >
+            {item.label}
+          </a>
+        </li>
+      );
+    })}
 
     <hr class="border-primary-200" />
 
-    <li>
-      <a
-        href="/aplicacion#formulario"
-        class="block rounded-lg bg-coral px-4 py-3 text-center text-base text-white shadow-sm"
-      >
-        Aplicar a una beca
-      </a>
-    </li>
-
-    <li>
-      <a
-        href="/tourism-with-purpose"
-        class="block rounded-lg bg-sun px-4 py-3 text-center text-base font-bold text-primary-950 shadow-sm"
-      >
-      Tourism with Purpose
-      </a>
-    </li>
-
-    <li>
-      <a
-        href="/involucrate"
-        class="block rounded-lg border border-teal/30 bg-teal-soft px-4 py-3 text-center text-base"
-      >
-        Quiero apoyar
-      </a>
-    </li>
+    {actionItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class={`block rounded-lg px-4 py-3 text-center text-base font-semibold shadow-sm ${item.mobileClassName}`}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
 
   </ul>
 </div>
